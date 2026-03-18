@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: light;
   --background: #fbfbf6;
   --foreground: #13251f;
   --surface: #ffffff;
@@ -26,20 +27,6 @@
 
   --font-sans: var(--font-sans);
   --font-display: var(--font-display);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #07110e;
-    --foreground: #e9f2ee;
-    --surface: #0b1a15;
-    --muted: #afc2bb;
-    --border: color-mix(in oklab, var(--foreground) 16%, transparent);
-
-    --brand: #55a386;
-    --brand-2: #3c7f66;
-    --accent: #d7b46f;
-  }
 }
 
 body {
