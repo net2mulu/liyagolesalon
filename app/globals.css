@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fbfbf6;
+  --foreground: #13251f;
+  --surface: #ffffff;
+  --muted: #5b6f66;
+  --border: color-mix(in oklab, var(--foreground) 14%, transparent);
+
+  --brand: #2f6b57;
+  --brand-2: #1e4a3c;
+  --accent: #c6a15b;
+
+  --shadow: 0 20px 60px color-mix(in oklab, #000 18%, transparent);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-brand: var(--brand);
+  --color-brand-2: var(--brand-2);
+  --color-accent: var(--accent);
+
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #07110e;
+    --foreground: #e9f2ee;
+    --surface: #0b1a15;
+    --muted: #afc2bb;
+    --border: color-mix(in oklab, var(--foreground) 16%, transparent);
+
+    --brand: #55a386;
+    --brand-2: #3c7f66;
+    --accent: #d7b46f;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system,
+    Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+* {
+  border-color: var(--border);
+}
+
+::selection {
+  background: color-mix(in oklab, var(--brand) 28%, transparent);
+}
