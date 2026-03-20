@@ -1,17 +1,18 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const links = [
   {
     title: "TikTok",
     href: "https://www.tiktok.com/@liyagolesalon?_r=1&_t=ZS-94lWt2itbvU",
     description: "Short videos, transformations, and trends.",
-    Icon: TikTokIcon,
+    iconSrc: "/tiktok.png",
   },
   {
     title: "Instagram",
     href: "https://www.instagram.com/liya_gole_salon?igsh=N3J5c2xya2ZtZGV6&utm_source=qr",
     description: "Behind-the-scenes, results, and updates.",
-    Icon: InstagramIcon,
+    iconSrc: "/insta.png",
   },
 ] as const;
 
@@ -40,7 +41,7 @@ export default function MediaPage() {
         </div>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2">
-          {links.map(({ title, href, description, Icon }) => (
+          {links.map(({ title, href, description, iconSrc }) => (
             <a
               key={title}
               href={href}
@@ -55,8 +56,14 @@ export default function MediaPage() {
                     {description}
                   </p>
                 </div>
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-brand/10 text-brand ring-1 ring-border transition group-hover:bg-brand/15">
-                  <Icon className="h-5 w-5 text-brand" />
+                <span className="relative inline-flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-2xl ring-1 ring-border transition group-hover:ring-brand/30">
+                  <Image
+                    src={iconSrc}
+                    alt=""
+                    width={44}
+                    height={44}
+                    className="h-11 w-11 object-cover"
+                  />
                 </span>
               </div>
               <p className="mt-5 text-xs font-semibold text-brand group-hover:text-brand-2">
@@ -76,8 +83,14 @@ export default function MediaPage() {
                   Tap to preview the site—home, services, and booking.
                 </p>
               </div>
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-brand/10 text-brand ring-1 ring-border transition group-hover:bg-brand/15">
-                <span className="text-lg leading-none">⌂</span>
+              <span className="relative inline-flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-2xl ring-1 ring-border transition group-hover:ring-brand/30">
+                <Image
+                  src="/favicon-32x32.png"
+                  alt=""
+                  width={44}
+                  height={44}
+                  className="h-11 w-11 object-contain"
+                />
               </span>
             </div>
 
@@ -121,60 +134,3 @@ export default function MediaPage() {
     </main>
   );
 }
-
-function InstagramIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M7.5 2.5h9A5 5 0 0 1 21.5 7.5v9a5 5 0 0 1-5 5h-9a5 5 0 0 1-5-5v-9a5 5 0 0 1 5-5Z"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      />
-      <path
-        d="M12 16.2a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Z"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      />
-      <path
-        d="M17.3 6.9h.01"
-        stroke="currentColor"
-        strokeWidth="2.6"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function TikTokIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M13.2 3v12.1a3.9 3.9 0 1 1-3.4-3.9"
-        stroke="currentColor"
-        strokeWidth="1.9"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M13.2 3c.8 3.2 2.9 5.1 6.3 5.2v3.2c-2.6 0-4.8-.9-6.3-2.4"
-        stroke="currentColor"
-        strokeWidth="1.9"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
