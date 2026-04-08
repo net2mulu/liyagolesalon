@@ -2,14 +2,14 @@
 
 :root {
   color-scheme: light;
-  --background: #fbfbf6;
+  --background: #e6e8d8;
   --foreground: #13251f;
   --surface: #ffffff;
   --muted: #5b6f66;
   --border: color-mix(in oklab, var(--foreground) 14%, transparent);
 
-  --brand: #2f6b57;
-  --brand-2: #1e4a3c;
+  --brand: #819671;
+  --brand-2: #819671;
   --accent: #c6a15b;
 
   --shadow: 0 20px 60px color-mix(in oklab, #000 18%, transparent);

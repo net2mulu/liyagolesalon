@@ -3,55 +3,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      <header className="absolute inset-x-0 top-0 z-50">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <a href="#" className="inline-flex items-center gap-3">
-            <span className="relative inline-flex h-8 w-[110px] items-center">
-              <Image
-                src="/logo.png"
-                alt="Liya Gole Salon"
-                width={260}
-                height={80}
-                priority
-                className="h-8 w-auto object-contain filter-[drop-shadow(0_2px_8px_rgba(0,0,0,0.35))]"
-              />
-            </span>
-          </a>
 
-          <nav className="hidden items-center gap-8 text-sm font-semibold text-white md:flex">
-            <a className="text-white/90 hover:text-white" href="#home">
-              Home
-            </a>
-            <a className="text-white/90 hover:text-white" href="#services">
-              Services
-            </a>
-            <a className="text-white/90 hover:text-white" href="#about">
-              About
-            </a>
-            <a className="text-white/90 hover:text-white" href="/media">
-              Media
-            </a>
-            <a className="text-white/90 hover:text-white" href="#contact">
-              Contact
-            </a>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <a
-              href="#book"
-              className="hidden h-9 items-center justify-center rounded-full border border-white/25 bg-white/10 px-4 text-xs font-semibold text-white shadow-sm backdrop-blur hover:bg-white/15 md:inline-flex"
-            >
-              Call Us
-            </a>
-            <a
-              href="#book"
-              className="inline-flex h-9 items-center justify-center rounded-full bg-white px-4 text-xs font-semibold text-foreground shadow-sm hover:bg-white/90"
-            >
-              Book Now
-            </a>
-          </div>
-        </div>
-      </header>
 
       <main id="home">
         <section className="relative min-h-[520px] overflow-hidden">
@@ -62,7 +14,7 @@ export default function Home() {
             priority
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-[#819671]/40" />
 
           <div className="relative mx-auto max-w-6xl px-6 pb-16 pt-28 md:pb-24 md:pt-36">
             <p className="text-xs font-semibold tracking-widest text-white/75">
@@ -86,7 +38,7 @@ export default function Home() {
                 Book Appointment
               </a>
               <a
-                href="#services"
+                href="/services"
                 className="inline-flex h-11 items-center justify-center rounded-full border border-white/25 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur hover:bg-white/15"
               >
                 View Services
@@ -228,80 +180,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer id="contact" className="bg-brand-2 text-white">
-        <div className="mx-auto max-w-6xl px-6 py-12">
-          <div className="grid gap-10 md:grid-cols-4">
-            <div>
-              <div className="relative inline-flex h-10 w-[150px] items-center">
-                <Image
-                  src="/logo.png"
-                  alt="Liya Gole Salon"
-                  width={320}
-                  height={100}
-                  className="h-10 w-auto object-contain opacity-90"
-                />
-              </div>
-              <p className="mt-3 text-sm leading-7 text-white/70">
-                More than a salon—confidence is crafted, individuality is
-                celebrated, and beauty is redefined.
-              </p>
-            </div>
 
-            <FooterCol
-              title="Quick Links"
-              items={[
-                { label: "Home", href: "#home" },
-                { label: "Services", href: "#services" },
-                { label: "About", href: "#about" },
-                { label: "Book", href: "#book" },
-                { label: "Media", href: "/media" },
-              ]}
-            />
-            <FooterCol
-              title="Our Services"
-              items={[
-                { label: "Hair Styling", href: "#services" },
-                { label: "Color & Treatments", href: "#services" },
-                { label: "Manicure & Pedicure", href: "#services" },
-                { label: "Beauty", href: "#services" },
-              ]}
-            />
-
-            <div>
-              <p className="text-sm font-semibold">Contact Us</p>
-              <div className="mt-3 grid gap-2 text-sm text-white/70">
-                <p>Phone: add your number</p>
-                <p>Email: booking@liyagolesalon.com</p>
-                <p>Address: add your address</p>
-              </div>
-              <div className="mt-5 flex items-center gap-3">
-                <a
-                  href="https://www.instagram.com/liya_gole_salon?igsh=N3J5c2xya2ZtZGV6&utm_source=qr"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white/10 ring-1 ring-white/15 hover:bg-white/15"
-                  aria-label="Instagram"
-                >
-                  <Image src="/insta.svg" alt="" width={20} height={20} />
-                </a>
-                <a
-                  href="https://www.tiktok.com/@liyagolesalon?_r=1&_t=ZS-94lWt2itbvU"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white/10 ring-1 ring-white/15 hover:bg-white/15"
-                  aria-label="TikTok"
-                >
-                  <Image src="/tiktok.svg" alt="" width={20} height={20} />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-10 border-t border-white/15 pt-6 text-center text-xs text-white/60">
-            © {new Date().getFullYear()} Liya Gole Salon. All rights reserved.
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
@@ -377,25 +256,4 @@ function CtaIcon({ title, subtitle }: { title: string; subtitle: string }) {
   );
 }
 
-function FooterCol({
-  title,
-  items,
-}: {
-  title: string;
-  items: { label: string; href: string }[];
-}) {
-  return (
-    <div>
-      <p className="text-sm font-semibold">{title}</p>
-      <ul className="mt-3 grid gap-2 text-sm text-white/70">
-        {items.map((it) => (
-          <li key={it.label}>
-            <a className="hover:text-white" href={it.href}>
-              {it.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+
