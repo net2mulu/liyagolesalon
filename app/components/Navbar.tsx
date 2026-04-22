@@ -36,17 +36,17 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a
+          {/* <a
             href="tel:+251912345678"
             className="hidden h-9 items-center justify-center rounded-full border border-white/25 bg-white/10 px-4 text-xs font-semibold text-white shadow-sm backdrop-blur hover:bg-white/15 md:inline-flex"
           >
             Call Us
-          </a>
+          </a> */}
           <a
-            href="/#book"
+            href="/contact"
             className="inline-flex h-9 items-center justify-center rounded-full bg-white px-4 text-xs font-semibold text-[#1E3A2F] shadow-sm hover:bg-white/90"
           >
-            Book Now
+            Contact
           </a>
         </div>
       </div>

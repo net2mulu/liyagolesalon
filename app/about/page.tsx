@@ -9,12 +9,14 @@ export default function AboutPage() {
         {/* Hero Section */}
         <section className="relative bg-[#819671] pt-32 pb-20 md:pt-40 md:pb-28 text-center text-white">
           <div className="mx-auto max-w-6xl px-6">
-            <div className="flex justify-center mb-8">
-              <Image src="/logo.png" alt="Liya Gole" width={120} height={40} className="brightness-0 invert opacity-60" />
-            </div>
-            <h1 className="font-(--font-display) text-5xl md:text-7xl mb-8 tracking-tight">Our Story</h1>
+            <h1 className="font-(--font-display) text-5xl md:text-7xl mb-8 tracking-tight">The Foundation of Excellence</h1>
             <p className="max-w-2xl mx-auto text-lg md:text-xl text-white/80 leading-relaxed font-light">
-              10 years of dedication to beauty, wellness, and empowering confidence through exceptional service.
+              Liya Gole Salon was founded by Wengelawit Liya Gole, a renowned makeup artist and
+              instructor whose expertise spans Addis Ababa, Los Angeles, and the DMV Area. Born from
+              a simple idea that beauty should be intentional and not rushed, the salon is the culmination
+              of over 10 years of industry experience. What began as a deep passion for self expression
+              and refined artistry has grown into a premier destination where international standards of
+              luxury meet personalized care.
             </p>
           </div>
         </section>
@@ -41,32 +43,32 @@ export default function AboutPage() {
         <section className="bg-[#F4F4E4]/50 py-24">
           <div className="mx-auto max-w-6xl px-6">
             <div className="text-center mb-16">
-               <h2 className="text-3xl font-(--font-display) text-[#1E3A2F] mb-4 tracking-tight">Our Core Values</h2>
-               <p className="text-[#4A5D45]/60 font-light">The principles that guide everything we do</p>
+              <h2 className="text-3xl font-(--font-display) text-[#1E3A2F] mb-4 tracking-tight">Our Core Values</h2>
+              <p className="text-[#4A5D45]/60 font-light">The principles that guide everything we do</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <ValueCard 
-                title="Client-Centered Care" 
+              <ValueCard
+                title="Client-Centered Care"
                 desc="Your satisfaction is our priority. We listen, understand, and tailor every service to your needs."
               />
-              <ValueCard 
-                title="Excellence & Quality" 
+              <ValueCard
+                title="Excellence & Quality"
                 desc="We never compromise on quality. From products to techniques, we strive for perfection in every detail."
               />
-              <ValueCard 
-                title="Expert Team" 
+              <ValueCard
+                title="Expert Team"
                 desc="Our stylists are highly trained professionals who are passionate about their craft and continuous learning."
               />
-               <ValueCard 
-                title="Honesty & Integrity" 
+              <ValueCard
+                title="Honesty & Integrity"
                 desc="We believe in transparent pricing and honest consultations to build lasting trust with our clients."
               />
-               <ValueCard 
-                title="Safety & Hygiene" 
+              <ValueCard
+                title="Safety & Hygiene"
                 desc="Your health is paramount. We maintain the highest standards of cleanliness and sterilization in our salon."
               />
-               <ValueCard 
-                title="Innovation" 
+              <ValueCard
+                title="Innovation"
                 desc="We stay ahead of trends and embrace new techniques to bring you the best that the beauty world has to offer."
               />
             </div>
@@ -77,14 +79,14 @@ export default function AboutPage() {
         <section className="py-24 overflow-hidden">
           <div className="mx-auto max-w-6xl px-6">
             <div className="text-center mb-24">
-               <h2 className="text-3xl font-(--font-display) text-[#1E3A2F] mb-4 tracking-tight">Our Journey</h2>
-               <p className="text-[#4A5D45]/60 font-light">Milestones that shaped our story</p>
+              <h2 className="text-3xl font-(--font-display) text-[#1E3A2F] mb-4 tracking-tight">Our Journey</h2>
+              <p className="text-[#4A5D45]/60 font-light">Milestones that shaped our story</p>
             </div>
-            
+
             <div className="relative">
               {/* Vertical line - hidden on mobile */}
               <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[#1E3A2F]/10 hidden md:block" />
-              
+
               <div className="space-y-16">
                 <TimelineItem year="2011" title="The Beginning" desc="Liya Gole opened her first boutique salon with a vision to redefine the salon experience." side="left" />
                 <TimelineItem year="2014" title="Expansion Move" desc="Moved to a larger prime location to accommodate our growing community of clients." side="right" />
@@ -126,8 +128,8 @@ export default function AboutPage() {
               </div>
               <div className="relative aspect-square rounded-[40px] overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 bg-white/5">
-                   {/* Placeholder for an elegant interior shot */}
-                   <Image src="/hero.svg" alt="Salon Space" fill className="object-cover opacity-80" />
+                  {/* Placeholder for an elegant interior shot */}
+                  <Image src="/hero.svg" alt="Salon Space" fill className="object-cover opacity-80" />
                 </div>
               </div>
             </div>
@@ -137,13 +139,13 @@ export default function AboutPage() {
         {/* Awards */}
         <section className="py-24 bg-[#FDFDF5]">
           <div className="mx-auto max-w-6xl px-6 text-center">
-             <h2 className="text-4xl font-(--font-display) text-[#1E3A2F] mb-16 tracking-tight">Awards & Recognition</h2>
-             <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
-                <AwardItem title="Best Beauty Salon" year="2023" />
-                <AwardItem title="Excellence in Service" year="2021" />
-                <AwardItem title="Innovation Award" year="2024" />
-                <AwardItem title="Top Rated 5/5" year="2025" />
-             </div>
+            <h2 className="text-4xl font-(--font-display) text-[#1E3A2F] mb-16 tracking-tight">Awards & Recognition</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+              <AwardItem title="Best Beauty Salon" year="2023" />
+              <AwardItem title="Excellence in Service" year="2021" />
+              <AwardItem title="Innovation Award" year="2024" />
+              <AwardItem title="Top Rated 5/5" year="2025" />
+            </div>
           </div>
         </section>
       </main>
@@ -156,11 +158,11 @@ export default function AboutPage() {
 function ValueCard({ title, desc }: { title: string, desc: string }) {
   return (
     <div className="bg-white p-10 rounded-3xl border border-[#1E3A2F]/5 hover:shadow-xl hover:shadow-[#1E3A2F]/5 transition-all group">
-       <div className="w-12 h-12 rounded-2xl bg-[#F4F4E4] flex items-center justify-center text-[#1E3A2F] mb-8 group-hover:bg-[#1E3A2F] group-hover:text-white transition-all">
-          <span className="text-xl">✦</span>
-       </div>
-       <h3 className="text-xl font-medium text-[#1E3A2F] mb-4 tracking-tight">{title}</h3>
-       <p className="text-[#4A5D45]/70 text-sm leading-relaxed font-light">{desc}</p>
+      <div className="w-12 h-12 rounded-2xl bg-[#F4F4E4] flex items-center justify-center text-[#1E3A2F] mb-8 group-hover:bg-[#1E3A2F] group-hover:text-white transition-all">
+        <span className="text-xl">✦</span>
+      </div>
+      <h3 className="text-xl font-medium text-[#1E3A2F] mb-4 tracking-tight">{title}</h3>
+      <p className="text-[#4A5D45]/70 text-sm leading-relaxed font-light">{desc}</p>
     </div>
   );
 }
@@ -168,15 +170,15 @@ function ValueCard({ title, desc }: { title: string, desc: string }) {
 function TimelineItem({ year, title, desc, side }: { year: string, title: string, desc: string, side: 'left' | 'right' }) {
   return (
     <div className={`flex items-center w-full ${side === 'left' ? 'md:flex-row-reverse' : ''} mb-8`}>
-       <div className="hidden md:block w-1/2" />
-       <div className="z-20 flex items-center order-1 bg-[#1E3A2F] shadow-xl w-10 h-10 rounded-full border-4 border-white">
-          <h1 className="mx-auto font-semibold text-lg text-white" />
-       </div>
-       <div className={`order-1 bg-white rounded-3xl border border-[#1E3A2F]/5 shadow-sm w-full md:w-1/2 px-8 py-6 ${side === 'left' ? 'md:mr-8' : 'md:ml-8'}`}>
-          <span className="text-[#1E3A2F] font-bold text-lg mb-1 block">{year}</span>
-          <h3 className="mb-2 font-medium text-xl text-[#1E3A2F] tracking-tight">{title}</h3>
-          <p className="text-sm leading-relaxed text-[#4A5D45]/70 font-light">{desc}</p>
-       </div>
+      <div className="hidden md:block w-1/2" />
+      <div className="z-20 flex items-center order-1 bg-[#1E3A2F] shadow-xl w-10 h-10 rounded-full border-4 border-white">
+        <h1 className="mx-auto font-semibold text-lg text-white" />
+      </div>
+      <div className={`order-1 bg-white rounded-3xl border border-[#1E3A2F]/5 shadow-sm w-full md:w-1/2 px-8 py-6 ${side === 'left' ? 'md:mr-8' : 'md:ml-8'}`}>
+        <span className="text-[#1E3A2F] font-bold text-lg mb-1 block">{year}</span>
+        <h3 className="mb-2 font-medium text-xl text-[#1E3A2F] tracking-tight">{title}</h3>
+        <p className="text-sm leading-relaxed text-[#4A5D45]/70 font-light">{desc}</p>
+      </div>
     </div>
   );
 }
@@ -184,11 +186,11 @@ function TimelineItem({ year, title, desc, side }: { year: string, title: string
 function AwardItem({ title, year }: { title: string, year: string }) {
   return (
     <div className="text-center group">
-       <div className="inline-flex items-center justify-center w-20 h-20 rounded-full border border-[#1E3A2F]/10 mb-6 group-hover:bg-[#F4F4E4] transition-all">
-          <span className="text-3xl">🏆</span>
-       </div>
-       <h4 className="text-lg font-medium text-[#1E3A2F] mb-1 tracking-tight">{title}</h4>
-       <p className="text-[#4A5D45]/50 text-sm font-light">{year}</p>
+      <div className="inline-flex items-center justify-center w-20 h-20 rounded-full border border-[#1E3A2F]/10 mb-6 group-hover:bg-[#F4F4E4] transition-all">
+        <span className="text-3xl">🏆</span>
+      </div>
+      <h4 className="text-lg font-medium text-[#1E3A2F] mb-1 tracking-tight">{title}</h4>
+      <p className="text-[#4A5D45]/50 text-sm font-light">{year}</p>
     </div>
   );
 }

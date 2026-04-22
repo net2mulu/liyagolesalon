@@ -17,7 +17,7 @@ export default function Footer() {
               />
             </div>
             <p className="mt-3 text-sm leading-7 text-white/70">
-              More than a salon—confidence is crafted, individuality is
+              More than a salon confidence is crafted, individuality is
               celebrated, and beauty is redefined.
             </p>
           </div>
@@ -28,7 +28,7 @@ export default function Footer() {
               { label: "Home", href: "/" },
               { label: "Services", href: "/services" },
               { label: "About", href: "/about" },
-              { label: "Book", href: "/#book" },
+              // { label: "Book", href: "/#book" },
               { label: "Gallery", href: "/gallery" },
               { label: "Contact", href: "/contact" },
             ]}
@@ -37,9 +37,9 @@ export default function Footer() {
             title="Our Services"
             items={[
               { label: "Hair Styling", href: "/services" },
-              { label: "Color & Treatments", href: "/services" },
-              { label: "Manicure & Pedicure", href: "/services" },
-              { label: "Beauty", href: "/services" },
+              { label: "Pedicure and Menicure", href: "/services" },
+              { label: "Treatment", href: "/services" },
+              { label: "Professional Coloring", href: "/services" },
             ]}
           />
 

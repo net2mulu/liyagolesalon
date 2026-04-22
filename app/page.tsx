@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ServiceCard } from "./components/ServiceCard";
 
 export default function Home() {
   return (
@@ -6,37 +7,38 @@ export default function Home() {
 
 
       <main id="home">
-        <section className="relative min-h-[520px] overflow-hidden">
+        <section className="relative h-[100dvh] min-h-[600px] flex items-center overflow-hidden">
           <Image
-            src="/hero.svg"
+            src="/compressed/natus.png"
             alt="Liya Gole Salon"
             fill
             priority
             className="object-cover"
           />
           <div className="absolute inset-0 bg-[#819671]/40" />
+          {/* <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-background via-background/70 to-transparent" /> */}
 
-          <div className="relative mx-auto max-w-6xl px-6 pb-16 pt-28 md:pb-24 md:pt-36">
+          <div className="relative mx-auto w-full max-w-6xl px-6">
             <p className="text-xs font-semibold tracking-widest text-white/75">
               YOUR BEAUTY DESTINATION
             </p>
             <h1 className="mt-3 max-w-xl font-(--font-display) text-4xl leading-[1.05] tracking-tight text-white sm:text-5xl">
-              Your Beauty,
+              Where Beauty,
               <br />
-              Our Passion
+              Meets Intentionality
             </h1>
             <p className="mt-5 max-w-xl text-sm leading-7 text-white/75">
-              Experience luxury beauty treatments tailored to you, blending modern
-              techniques with timeless style in a calm, refined space.
+              A refined beauty destination founded by Liya Gole, where artistry meets
+              precision and every detail matters.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <a
+              {/* <a
                 href="#book"
                 className="inline-flex h-11 items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-foreground shadow-sm hover:bg-white/90"
               >
                 Book Appointment
-              </a>
+              </a> */}
               <a
                 href="/services"
                 className="inline-flex h-11 items-center justify-center rounded-full border border-white/25 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur hover:bg-white/15"
@@ -45,95 +47,117 @@ export default function Home() {
               </a>
             </div>
           </div>
-        </section>
 
-        <section id="services" className="bg-background">
-          <div className="mx-auto max-w-6xl px-6 py-14">
-            <div className="text-center">
-              <h2 className="font-(--font-display) text-2xl tracking-tight">
-                Our Services
-              </h2>
-              <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-muted">
-                From signature styling to restorative treatments, we offer a curated
-                range designed to elevate your natural beauty.
-              </p>
-            </div>
-
-            <div className="mt-8 grid gap-5 md:grid-cols-4">
-              <ServiceCard
-                title="Hair Styling"
-                body="Precision cuts, styling, curls, braids, relaxers and more."
-                img="/service-hair.svg"
-              />
-              <ServiceCard
-                title="Facial Treatment"
-                body="Fresh, radiant skin with relaxing care-focused treatments."
-                img="/service-facial.svg"
-              />
-              <ServiceCard
-                title="Makeup Artistry"
-                body="Soft glam to full glam—crafted to enhance your features."
-                img="/service-makeup.svg"
-              />
-              <ServiceCard
-                title="Nail Care"
-                body="Manicure and pedicure services with clean, luxe finishes."
-                img="/service-nails.svg"
-              />
-            </div>
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            {/* <a href="#services" className="flex flex-col items-center gap-1 text-white/80 hover:text-white transition-colors" aria-label="Go to next section">
+              <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">Scroll</span>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </a> */}
           </div>
         </section>
 
-        <section id="about" className="bg-background">
-          <div className="mx-auto max-w-6xl px-6 py-14">
-            <div className="grid gap-10 md:grid-cols-2 md:items-center">
-              <div className="relative overflow-hidden rounded-3xl border bg-surface/70 shadow-(--shadow)">
-                <Image
-                  src="/about.svg"
-                  alt="About Liya Gole"
-                  width={900}
-                  height={700}
-                  className="h-auto w-full object-cover"
-                />
+        {/* Shared wrapper so the pattern flows across both sections */}
+        <div className="relative bg-background">
+          {/* Pattern: only at the boundary between Services and About, right side */}
+          <div
+            className="pointer-events-none absolute top-1/2 right-6 -translate-y-1/2 w-56 h-80 opacity-10 rounded-2xl overflow-hidden"
+            style={{
+              backgroundImage: "url('/pattern/3.png')",
+              backgroundRepeat: "repeat",
+              backgroundSize: "160px",
+            }}
+          />
+
+          <section id="services">
+            <div className="relative mx-auto max-w-6xl px-6 py-14">
+              <div className="text-center">
+                <h2 className="font-(--font-display) text-2xl tracking-tight">
+                  Our Services
+                </h2>
+                <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-muted">
+                  From signature styling to restorative treatments, we offer a curated range designed to
+                  elevate your natural beauty.
+                </p>
               </div>
 
-              <div>
-                <h2 className="font-(--font-display) text-2xl tracking-tight">
-                  About Liya Gole
-                </h2>
-                <p className="mt-4 text-sm leading-7 text-muted">
-                  Liya Gole Salon is a refined beauty destination where beauty
-                  meets comfort, founded by Liya Gole. Rooted in a deep
-                  understanding of hair, beauty, and self-expression, we deliver
-                  a luxurious, personalized experience.
-                </p>
-                <p className="mt-4 text-sm leading-7 text-muted">
-                  With a focus on precision, creativity, and care, we bring
-                  together modern techniques and timeless aesthetics—whether
-                  through transformative color, signature styling, or restorative
-                  treatments.
-                </p>
+              <div className="mt-8 grid gap-5 md:grid-cols-4">
+                <ServiceCard
+                  title="Hair Styling"
+                  body="From everyday styling to full transformations, our hair services are designed to enhance natural beauty while maintaining hair health."
+                  img="/compressed/1.webp"
+                />
+                <ServiceCard
+                  title="Pedicure and Menicure"
+                  body="Clean technique meets modern design for elegant, durable and trend forward results."
+                  img="/compressed/11.webp"
+                />
+                <ServiceCard
+                  title="Treatment"
+                  body="Beyond beauty, we provide relaxing treatments that support overall well being and allow clients to recharge."
+                  img="/compressed/14.jpg"
+                />
+                <ServiceCard
+                  title="Professional Coloring"
+                  body="Transform your look with seamless color transitions that prioritize the health and integrity of your hair."
+                  img="/compressed/13.jpg"
+                />
+              </div>
+            </div>
+          </section>
 
-                <div className="mt-7 grid gap-3 sm:grid-cols-2">
-                  <InfoPill label="Hours" value="10:00am – 5:00pm" />
-                  <InfoPill label="Location" value="Add your city/address" />
-                  <InfoPill label="Appointments" value="Book online anytime" />
-                  <InfoPill label="Support" value="24/7 message requests" />
+          <section id="about">
+            <div className="mx-auto max-w-6xl px-6 py-14">
+              <div className="grid gap-10 md:grid-cols-2">
+                <div className="relative min-h-[400px] overflow-hidden rounded-3xl border bg-surface/70 shadow-(--shadow) md:h-full md:min-h-[550px]">
+                  <Image
+                    src="/compressed/liya.JPG"
+                    alt="About Liya Gole"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
+                <div className="flex flex-col justify-center py-6 md:py-10">
+                  <h2 className="font-(--font-display) text-2xl tracking-tight">
+                    About Liya Gole
+                  </h2>
+                  <p className="mt-4 text-sm leading-7 text-muted">
+                    Liya Gole Salon was born from a simple idea: beauty should be intentional, not rushed. What
+                    began as a passion for creating refined, high quality looks has grown into a premier
+                    destination where artistry meets precision, and every detail matters. Our vision is to go
+                    beyond trends, focusing on the technique, care, and experience that make every client feel
+                    seen and understood.
+                  </p>
+                  <p className="mt-4 text-sm leading-7 text-muted">
+                    At Liya Gole Salon, we believe that true beauty is crafted through patience and a
+                    commitment to excellence, from prep to perfection. Whether you are seeking a
+                    transformative color, intricate braiding, or a restorative treatment, our goal is to ensure you
+                    leave feeling elevated, empowered, and effortlessly beautiful
+                  </p>
+
+                  {/* <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                    <InfoPill label="Hours" value="10:00am – 5:00pm" />
+                    <InfoPill label="Location" value="Add your city/address" />
+                    <InfoPill label="Appointments" value="Book online anytime" />
+                    <InfoPill label="Support" value="24/7 message requests" />
+                  </div> */}
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
 
         <section id="testimonials" className="bg-brand-2">
           <div className="mx-auto max-w-6xl px-6 py-14">
             <div className="text-center">
               <h2 className="font-(--font-display) text-2xl tracking-tight text-white">
-                What Our Clients Say
+                Liya Gole Salon Experience
               </h2>
               <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-white/75">
-                Don’t just take our word for it—here’s what clients love about
-                their experience.
+                Every visit tells a story of care and precision. Hear from the community of
+                clients who leave our space feeling elevated and empowered.
               </p>
             </div>
 
@@ -154,7 +178,7 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-6 py-16">
             <div className="text-center">
               <h2 className="font-(--font-display) text-2xl tracking-tight">
-                Ready to Transform Your Look?
+                Ready to Experience Elevated Beauty?
               </h2>
               <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-muted">
                 Book your appointment today and experience the Liya Gole Salon
@@ -185,36 +209,7 @@ export default function Home() {
   );
 }
 
-function ServiceCard({
-  title,
-  body,
-  img,
-}: {
-  title: string;
-  body: string;
-  img: string;
-}) {
-  return (
-    <div className="group overflow-hidden rounded-3xl border bg-surface/70 shadow-sm">
-      <div className="relative h-36">
-        <Image src={img} alt={title} fill className="object-cover" />
-        <div className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/85 text-foreground shadow-sm">
-          <span className="text-lg leading-none">›</span>
-        </div>
-      </div>
-      <div className="p-5">
-        <p className="text-sm font-semibold">{title}</p>
-        <p className="mt-2 text-xs leading-6 text-muted">{body}</p>
-        <a
-          href="#book"
-          className="mt-4 inline-flex text-xs font-semibold text-brand hover:text-brand-2"
-        >
-          Book Appointment
-        </a>
-      </div>
-    </div>
-  );
-}
+
 
 function InfoPill({ label, value }: { label: string; value: string }) {
   return (
