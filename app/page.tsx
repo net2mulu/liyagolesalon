@@ -1,5 +1,48 @@
 import Image from "next/image";
 import { ServiceCard } from "./components/ServiceCard";
+import Antigravity from "./components/Antigravity";
+import GlareHover from "./components/GlareHover";
+import { HeroText } from "./components/HeroText";
+import DragElements from "./components/DragElements";
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+
+const testimonials = [
+  {
+    quote:
+      "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
+    name: "Sarah Chen",
+    designation: "Product Manager at TechFlow",
+    src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    quote:
+      "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
+    name: "Michael Rodriguez",
+    designation: "CTO at InnovateSphere",
+    src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    quote:
+      "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
+    name: "Emily Watson",
+    designation: "Operations Director at CloudScale",
+    src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    quote:
+      "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
+    name: "James Kim",
+    designation: "Engineering Lead at DataPro",
+    src: "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    quote:
+      "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
+    name: "Lisa Thompson",
+    designation: "VP of Technology at FutureNet",
+    src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+];
 
 export default function Home() {
   return (
@@ -18,34 +61,8 @@ export default function Home() {
           <div className="absolute inset-0 bg-[#819671]/40" />
           {/* <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-background via-background/70 to-transparent" /> */}
 
-          <div className="relative mx-auto w-full max-w-6xl px-6">
-            <p className="text-xs font-semibold tracking-widest text-white/75">
-              YOUR BEAUTY DESTINATION
-            </p>
-            <h1 className="mt-3 max-w-xl font-(--font-display) text-4xl leading-[1.05] tracking-tight text-white sm:text-5xl">
-              Where Beauty,
-              <br />
-              Meets Intentionality
-            </h1>
-            <p className="mt-5 max-w-xl text-sm leading-7 text-white/75">
-              A refined beauty destination founded by Liya Gole, where artistry meets
-              precision and every detail matters.
-            </p>
-
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-              {/* <a
-                href="#book"
-                className="inline-flex h-11 items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-foreground shadow-sm hover:bg-white/90"
-              >
-                Book Appointment
-              </a> */}
-              <a
-                href="/services"
-                className="inline-flex h-11 items-center justify-center rounded-full border border-white/25 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur hover:bg-white/15"
-              >
-                View Services
-              </a>
-            </div>
+          <div className="site-container relative">
+            <HeroText />
           </div>
 
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
@@ -71,7 +88,7 @@ export default function Home() {
           />
 
           <section id="services">
-            <div className="relative mx-auto max-w-6xl px-6 py-14">
+            <div className="site-container relative py-14">
               <div className="text-center">
                 <h2 className="font-(--font-display) text-2xl tracking-tight">
                   Our Services
@@ -107,30 +124,60 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="about">
-            <div className="mx-auto max-w-6xl px-6 py-14">
-              <div className="grid gap-10 md:grid-cols-2">
-                <div className="relative min-h-[400px] overflow-hidden rounded-3xl border bg-surface/70 shadow-(--shadow) md:h-full md:min-h-[550px]">
+          <section id="about" className="relative overflow-hidden w-full">
+            <Antigravity
+              count={300}
+              magnetRadius={6}
+              ringRadius={7}
+              waveSpeed={0.4}
+              waveAmplitude={1}
+              particleSize={0.6}
+              lerpSpeed={0.05}
+              color="#819671"
+              autoAnimate
+              particleVariance={1}
+              rotationSpeed={0}
+              depthFactor={1}
+              pulseSpeed={3}
+              particleShape="capsule"
+              fieldStrength={10}
+            />
+            <div className="site-container py-14 relative z-10 pointer-events-none">
+              <div className="grid gap-10 md:grid-cols-2 pointer-events-auto">
+                <GlareHover
+                  width="100%"
+                  height="100%"
+                  glareColor="#ffffff"
+                  glareOpacity={0.3}
+                  glareAngle={-30}
+                  glareSize={300}
+                  transitionDuration={800}
+                  playOnce={false}
+                  background="transparent"
+                  borderColor="transparent"
+                  borderRadius="1.5rem"
+                  className="w-full h-full min-h-[400px] md:min-h-[550px] shadow-(--shadow)"
+                >
                   <Image
                     src="/compressed/liya.JPG"
                     alt="About Liya Gole"
                     fill
                     className="object-cover"
                   />
-                </div>
+                </GlareHover>
 
                 <div className="flex flex-col justify-center py-6 md:py-10">
                   <h2 className="font-(--font-display) text-2xl tracking-tight">
                     About Liya Gole
                   </h2>
-                  <p className="mt-4 text-sm leading-7 text-muted">
+                  <p className="mt-4 text-sm leading-7 ">
                     Liya Gole Salon was born from a simple idea: beauty should be intentional, not rushed. What
                     began as a passion for creating refined, high quality looks has grown into a premier
                     destination where artistry meets precision, and every detail matters. Our vision is to go
                     beyond trends, focusing on the technique, care, and experience that make every client feel
                     seen and understood.
                   </p>
-                  <p className="mt-4 text-sm leading-7 text-muted">
+                  <p className="mt-4 text-sm leading-7 text-">
                     At Liya Gole Salon, we believe that true beauty is crafted through patience and a
                     commitment to excellence, from prep to perfection. Whether you are seeking a
                     transformative color, intricate braiding, or a restorative treatment, our goal is to ensure you
@@ -149,8 +196,63 @@ export default function Home() {
           </section>
         </div>
 
+        <section className="relative h-[800px] w-full overflow-hidden bg-brand/5 pt-20 pb-40 flex flex-col">
+          <div className="site-container relative flex-1">
+            <div className="mb-8 text-center">
+              <h2 className="font-(--font-display) text-2xl tracking-tight">
+                Moments of Beauty
+              </h2>
+              <p className="mx-auto mt-2 max-w-2xl text-sm text-muted">
+                Explore our craft through these captured moments. Feel free to move them around.
+              </p>
+            </div>
+
+            <DragElements className="h-full w-full">
+              {/* Image 1 */}
+              <div className="w-48 bg-white p-3 shadow-xl -rotate-6 transition-transform hover:rotate-0" style={{ marginTop: '40px', marginLeft: '10%' }}>
+                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm">
+                  <Image src="/compressed/liyagole.JPG" alt="Salon Craft 1" fill className="object-cover pointer-events-none" draggable={false} />
+                </div>
+                <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-muted font-medium">Style & Grace</p>
+              </div>
+
+              {/* Image 2 */}
+              <div className="w-56 bg-white p-3 shadow-xl rotate-3 transition-transform hover:rotate-0" style={{ marginTop: '150px', marginLeft: '35%' }}>
+                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm">
+                  <Image src="/compressed/8.webp" alt="Salon Craft 2" fill className="object-cover pointer-events-none" draggable={false} />
+                </div>
+                <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-muted font-medium">Precision Cut</p>
+              </div>
+
+              {/* Image 3 */}
+              <div className="w-52 bg-white p-3 shadow-xl -rotate-2 transition-transform hover:rotate-0" style={{ marginTop: '40px', marginLeft: '65%' }}>
+                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm">
+                  <Image src="/compressed/3.webp" alt="Salon Craft 3" fill className="object-cover pointer-events-none" draggable={false} />
+                </div>
+                <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-muted font-medium">Radiant Color</p>
+              </div>
+
+              {/* Image 4 */}
+              <div className="w-60 bg-white p-3 shadow-xl rotate-6 transition-transform hover:rotate-0" style={{ marginTop: '240px', marginLeft: '15%' }}>
+                <div className="relative aspect-square w-full overflow-hidden rounded-sm">
+                  <Image src="/compressed/14.jpg" alt="Salon Craft 4" fill className="object-cover pointer-events-none" draggable={false} />
+                </div>
+                <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-muted font-medium">The Experience</p>
+              </div>
+
+              {/* Image 5 */}
+              <div className="w-44 bg-white p-3 shadow-xl -rotate-12 transition-transform hover:rotate-0" style={{ marginTop: '280px', marginLeft: '70%' }}>
+                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm">
+                  <Image src="/compressed/2.webp" alt="Salon Craft 5" fill className="object-cover pointer-events-none" draggable={false} />
+                </div>
+                <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-muted font-medium">Artistry</p>
+              </div>
+            </DragElements>
+          </div>
+        </section>
+
         <section id="testimonials" className="bg-brand-2">
-          <div className="mx-auto max-w-6xl px-6 py-14">
+          <div className="site-container py-14">
             <div className="text-center">
               <h2 className="font-(--font-display) text-2xl tracking-tight text-white">
                 Liya Gole Salon Experience
@@ -161,21 +263,14 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="mt-8 grid gap-5 md:grid-cols-2">
-              <ReviewCard
-                quote="The consultation was so thoughtful—and the finish was flawless. I left feeling like the best version of myself."
-                name="Client Review"
-              />
-              <ReviewCard
-                quote="Beautiful space, professional service, and the styling held perfectly. The attention to detail is next level."
-                name="Client Review"
-              />
+            <div className="mt-8">
+              <AnimatedTestimonials testimonials={testimonials} />
             </div>
           </div>
         </section>
 
         <section id="book" className="bg-background">
-          <div className="mx-auto max-w-6xl px-6 py-16">
+          <div className="site-container py-16">
             <div className="text-center">
               <h2 className="font-(--font-display) text-2xl tracking-tight">
                 Ready to Experience Elevated Beauty?
@@ -220,24 +315,7 @@ function InfoPill({ label, value }: { label: string; value: string }) {
   );
 }
 
-function ReviewCard({ quote, name }: { quote: string; name: string }) {
-  return (
-    <figure className="rounded-3xl bg-white/10 p-6 text-white ring-1 ring-white/15 backdrop-blur">
-      <div className="text-xs font-semibold tracking-widest text-white/80">
-        ★★★★★
-      </div>
-      <blockquote className="mt-4 text-sm leading-7 text-white/85">
-        “{quote}”
-      </blockquote>
-      <figcaption className="mt-5 flex items-center gap-3">
-        <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15 text-xs font-bold">
-          LG
-        </span>
-        <span className="text-xs font-semibold text-white/80">{name}</span>
-      </figcaption>
-    </figure>
-  );
-}
+
 
 function CtaIcon({ title, subtitle }: { title: string; subtitle: string }) {
   return (

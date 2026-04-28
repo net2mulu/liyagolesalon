@@ -8,7 +8,7 @@ export default function ContactPage() {
       <main>
         {/* Contact Hero */}
         <section className="relative bg-[#819671] pt-32 pb-20 md:pt-40 md:pb-28 text-white">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="site-container">
             <div className="flex items-center gap-2 text-white/80 mb-6">
               <span className="text-lg">✉</span>
               <span className="text-[13px] font-medium tracking-wide uppercase">We&apos;d Love to Hear From You</span>
@@ -22,7 +22,7 @@ export default function ContactPage() {
 
         {/* Contact Info Grid */}
         <section className="py-24">
-           <div className="mx-auto max-w-6xl px-6">
+           <div className="site-container">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                  <ContactInfoCard 
                     icon="📞" 
@@ -54,7 +54,7 @@ export default function ContactPage() {
 
         {/* Form & Sidebar Section */}
         <section className="bg-[#F4F4E4]/50 py-24">
-           <div className="mx-auto max-w-6xl px-6">
+           <div className="site-container">
               <div className="grid lg:grid-cols-3 gap-16">
                  {/* Contact Form */}
                  <div className="lg:col-span-2 bg-white p-12 rounded-[40px] shadow-sm">
@@ -135,7 +135,7 @@ export default function ContactPage() {
 
         {/* FAQs */}
         <section className="py-24 bg-[#FDFDF5]">
-           <div className="mx-auto max-w-6xl px-6">
+           <div className="site-container">
               <div className="text-center mb-16">
                  <h2 className="text-4xl font-(--font-display) text-[#1E3A2F] mb-4 tracking-tight">Frequently Asked Questions</h2>
                  <p className="text-[#4A5D45]/60 font-light">Quick answers to common questions</p>
@@ -155,7 +155,7 @@ export default function ContactPage() {
 
         {/* Map Section */}
         <section className="py-24 bg-white">
-           <div className="mx-auto max-w-6xl px-6 text-center">
+           <div className="site-container text-center">
               <h2 className="text-4xl font-(--font-display) text-[#1E3A2F] mb-4 tracking-tight">Visit Our Salon</h2>
               <p className="text-[#4A5D45]/60 font-light mb-16">Conveniently located in the heart of the city</p>
               

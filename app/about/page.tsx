@@ -1,4 +1,151 @@
 import Image from "next/image";
+import SpaceCarousel from "@/app/components/SpaceCarousel";
+import { Timeline } from "@/components/ui/timeline";
+
+const timelineData = [
+  {
+    title: "2024",
+    content: (
+      <div>
+        <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+          Built and launched Aceternity UI and Aceternity UI Pro from scratch
+        </p>
+        <div className="grid grid-cols-2 gap-4">
+          <img
+            src="https://assets.aceternity.com/templates/startup-1.webp"
+            alt="startup template"
+            width={500}
+            height={500}
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+          />
+          <img
+            src="https://assets.aceternity.com/templates/startup-2.webp"
+            alt="startup template"
+            width={500}
+            height={500}
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+          />
+          <img
+            src="https://assets.aceternity.com/templates/startup-3.webp"
+            alt="startup template"
+            width={500}
+            height={500}
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+          />
+          <img
+            src="https://assets.aceternity.com/templates/startup-4.webp"
+            alt="startup template"
+            width={500}
+            height={500}
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+          />
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: "Early 2023",
+    content: (
+      <div>
+        <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+          I usually run out of copy, but when I see content this big, I try to
+          integrate lorem ipsum.
+        </p>
+        <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+          Lorem ipsum is for people who are too lazy to write copy. But we are
+          not. Here are some more example of beautiful designs I built.
+        </p>
+        <div className="grid grid-cols-2 gap-4">
+          <img
+            src="https://assets.aceternity.com/pro/hero-sections.png"
+            alt="hero template"
+            width={500}
+            height={500}
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+          />
+          <img
+            src="https://assets.aceternity.com/features-section.png"
+            alt="feature template"
+            width={500}
+            height={500}
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+          />
+          <img
+            src="https://assets.aceternity.com/pro/bento-grids.png"
+            alt="bento template"
+            width={500}
+            height={500}
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+          />
+          <img
+            src="https://assets.aceternity.com/cards.png"
+            alt="cards template"
+            width={500}
+            height={500}
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+          />
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: "Changelog",
+    content: (
+      <div>
+        <p className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+          Deployed 5 new components on Aceternity today
+        </p>
+        <div className="mb-8">
+          <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
+            ✅ Card grid component
+          </div>
+          <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
+            ✅ Startup template Aceternity
+          </div>
+          <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
+            ✅ Random file upload lol
+          </div>
+          <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
+            ✅ Himesh Reshammiya Music CD
+          </div>
+          <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
+            ✅ Salman Bhai Fan Club registrations open
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-4">
+          <img
+            src="https://assets.aceternity.com/pro/hero-sections.png"
+            alt="hero template"
+            width={500}
+            height={500}
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+          />
+          <img
+            src="https://assets.aceternity.com/features-section.png"
+            alt="feature template"
+            width={500}
+            height={500}
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+          />
+          <img
+            src="https://assets.aceternity.com/pro/bento-grids.png"
+            alt="bento template"
+            width={500}
+            height={500}
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+          />
+          <img
+            src="https://assets.aceternity.com/cards.png"
+            alt="cards template"
+            width={500}
+            height={500}
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+          />
+        </div>
+      </div>
+    ),
+  },
+];
 
 export default function AboutPage() {
   return (
@@ -8,9 +155,14 @@ export default function AboutPage() {
       <main>
         {/* Hero Section */}
         <section className="relative bg-[#819671] pt-32 pb-20 md:pt-40 md:pb-28 text-center text-white">
-          <div className="mx-auto max-w-6xl px-6">
+
+        </section>
+
+        {/* Philosophy Section */}
+        <section className="py-24 text-center">
+          <div className="site-container">
             <h1 className="font-(--font-display) text-5xl md:text-7xl mb-8 tracking-tight">The Foundation of Excellence</h1>
-            <p className="max-w-2xl mx-auto text-lg md:text-xl text-white/80 leading-relaxed font-light">
+            <p>
               Liya Gole Salon was founded by Wengelawit Liya Gole, a renowned makeup artist and
               instructor whose expertise spans Addis Ababa, Los Angeles, and the DMV Area. Born from
               a simple idea that beauty should be intentional and not rushed, the salon is the culmination
@@ -19,21 +171,14 @@ export default function AboutPage() {
               luxury meet personalized care.
             </p>
           </div>
-        </section>
 
-        {/* Philosophy Section */}
-        <section className="py-24 text-center">
-          <div className="mx-auto max-w-4xl px-6">
-            <div className="inline-flex items-center gap-2 text-[#4A5D45]/60 mb-8 px-4 py-1.5 rounded-full bg-[#F4F4E4] text-[12px] font-bold uppercase tracking-widest">
-              OUR MISSION
-            </div>
-            <h2 className="text-4xl md:text-5xl font-(--font-display) text-[#1E3A2F] mb-10 tracking-tight">Empowering Beauty, Inside and Out</h2>
+          <div className="site-container max-w-4xl">
+            <h2 className="text-4xl md:text-5xl font-(--font-display) text-[#1E3A2F] mb-10 tracking-tight">OUR MISSION</h2>
             <div className="space-y-8 text-lg text-[#4A5D45]/80 leading-relaxed font-light">
               <p>
-                At Liya Gole Salon, we believe that beauty is not just about appearance—it&apos;s about confidence, self-care, and feeling your absolute best. Since 2011, we&apos;ve dedicated ourselves to providing a sanctuary where luxury meets relaxation, and every client is treated like family.
-              </p>
-              <p>
-                Our team of passionate professionals combines artistic vision with technical excellence to deliver personalized beauty experiences that exceed expectations. We use only premium products and stay at the forefront of industry trends to ensure you always leave feeling refreshed, confident, and beautiful.
+                Our mission is to enhance your natural beauty through a curated blend of sophisticated
+                artistry and restorative care, setting a premium standard for quality that empowers you to
+                express your truest self with confidence.
               </p>
             </div>
           </div>
@@ -41,104 +186,70 @@ export default function AboutPage() {
 
         {/* Core Values */}
         <section className="bg-[#F4F4E4]/50 py-24">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="site-container">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-(--font-display) text-[#1E3A2F] mb-4 tracking-tight">Our Core Values</h2>
-              <p className="text-[#4A5D45]/60 font-light">The principles that guide everything we do</p>
+              <p className="text-[#4A5D45]/60 font-light">At Liya Gole Salon, our philosophy is that beauty is not rushed; it is crafted. We are guided
+                by these foundational beliefs:</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <ValueCard
-                title="Client-Centered Care"
-                desc="Your satisfaction is our priority. We listen, understand, and tailor every service to your needs."
+                title="Process Driven Excellence"
+                desc="Great results start with the right process, from consultation to
+execution."
               />
               <ValueCard
-                title="Excellence & Quality"
-                desc="We never compromise on quality. From products to techniques, we strive for perfection in every detail."
+                title="Intentional Detail"
+                desc="Every braid, stroke, and finish is intentional because details define the final
+outcome."
               />
               <ValueCard
-                title="Expert Team"
-                desc="Our stylists are highly trained professionals who are passionate about their craft and continuous learning."
+                title="Intentional Detail"
+                desc="Every braid, stroke, and finish is intentional because details define the final
+outcome."
               />
               <ValueCard
-                title="Honesty & Integrity"
-                desc="We believe in transparent pricing and honest consultations to build lasting trust with our clients."
+                title="Holistic Confidence"
+                desc="Confidence is the ultimate goal, achieved by elevating natural beauty
+while maintaining health and well being."
               />
               <ValueCard
-                title="Safety & Hygiene"
-                desc="Your health is paramount. We maintain the highest standards of cleanliness and sterilization in our salon."
-              />
-              <ValueCard
-                title="Innovation"
-                desc="We stay ahead of trends and embrace new techniques to bring you the best that the beauty world has to offer."
+                title="Commitment to Quality"
+                desc="We believe true beauty is achieved through patience, expertise and
+a commitment to excellence from prep to perfection."
               />
             </div>
           </div>
         </section>
 
         {/* Our Journey (Timeline) */}
-        <section className="py-24 overflow-hidden">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="text-center mb-24">
-              <h2 className="text-3xl font-(--font-display) text-[#1E3A2F] mb-4 tracking-tight">Our Journey</h2>
-              <p className="text-[#4A5D45]/60 font-light">Milestones that shaped our story</p>
-            </div>
-
-            <div className="relative">
-              {/* Vertical line - hidden on mobile */}
-              <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[#1E3A2F]/10 hidden md:block" />
-
-              <div className="space-y-16">
-                <TimelineItem year="2011" title="The Beginning" desc="Liya Gole opened her first boutique salon with a vision to redefine the salon experience." side="left" />
-                <TimelineItem year="2014" title="Expansion Move" desc="Moved to a larger prime location to accommodate our growing community of clients." side="right" />
-                <TimelineItem year="2018" title="Award Recognition" desc="Named 'Best Salon in Addis' by local beauty and lifestyle associations." side="left" />
-                <TimelineItem year="2021" title="Innovation Center" desc="Launched our specialized hair treatment and education wing for professional stylists." side="right" />
-                <TimelineItem year="2025" title="The Next Chapter" desc="Continuing our legacy of excellence with new services and a refreshed space." side="left" />
-              </div>
-            </div>
-          </div>
-        </section>
+        <div className="relative w-full overflow-clip">
+          <Timeline data={timelineData} />
+        </div>
 
         {/* Our Space */}
-        <section className="bg-[#819671] py-24 text-white">
-          <div className="mx-auto max-w-6xl px-6">
+        <section className="py-24 text-[#4A5D45]">
+          <div className="site-container">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
                 <h2 className="text-4xl font-(--font-display) mb-8 tracking-tight">Our Space</h2>
-                <p className="text-white/80 text-lg leading-relaxed font-light mb-12">
-                  Step into a sanctuary of calm and elegance. Every detail of our salon has been thoughtfully designed to create a soothing atmosphere where you can relax and feel pampered. From our minimalist aesthetic to our curated soundtrack, your comfort is guaranteed.
+                <p className="text-[#4A5D45]/60 text-lg leading-relaxed font-light mb-12">
+                  Liya Gole Salon is a refined beauty destination where luxury meets comfort. Designed to feel
+                  elevated yet welcoming, our space is a sanctuary where clients can escape the rush of
+                  everyday life to unwind, recharge, and feel fully restored.
                 </p>
-                <div className="grid grid-cols-2 gap-8">
-                  <div>
-                    <span className="block text-3xl font-semibold mb-1">3,500 sq ft</span>
-                    <span className="text-white/50 text-sm font-light uppercase tracking-widest">Premium Space</span>
-                  </div>
-                  <div>
-                    <span className="block text-3xl font-semibold mb-1">12</span>
-                    <span className="text-white/50 text-sm font-light uppercase tracking-widest">Styling Stations</span>
-                  </div>
-                  <div>
-                    <span className="block text-3xl font-semibold mb-1">5</span>
-                    <span className="text-white/50 text-sm font-light uppercase tracking-widest">Private Treatment Rooms</span>
-                  </div>
-                  <div>
-                    <span className="block text-3xl font-semibold mb-1">100%</span>
-                    <span className="text-white/50 text-sm font-light uppercase tracking-widest">Solar Powered</span>
-                  </div>
-                </div>
+                <p>
+                  Every corner of our salon reflects our commitment to excellence and high end aesthetics
+                </p>
               </div>
-              <div className="relative aspect-square rounded-[40px] overflow-hidden shadow-2xl">
-                <div className="absolute inset-0 bg-white/5">
-                  {/* Placeholder for an elegant interior shot */}
-                  <Image src="/hero.svg" alt="Salon Space" fill className="object-cover opacity-80" />
-                </div>
-              </div>
+              <SpaceCarousel />
             </div>
           </div>
         </section>
 
         {/* Awards */}
         <section className="py-24 bg-[#FDFDF5]">
-          <div className="mx-auto max-w-6xl px-6 text-center">
+          <div className="site-container text-center">
             <h2 className="text-4xl font-(--font-display) text-[#1E3A2F] mb-16 tracking-tight">Awards & Recognition</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
               <AwardItem title="Best Beauty Salon" year="2023" />
@@ -151,7 +262,7 @@ export default function AboutPage() {
       </main>
 
 
-    </div>
+    </div >
   );
 }
 
@@ -167,21 +278,7 @@ function ValueCard({ title, desc }: { title: string, desc: string }) {
   );
 }
 
-function TimelineItem({ year, title, desc, side }: { year: string, title: string, desc: string, side: 'left' | 'right' }) {
-  return (
-    <div className={`flex items-center w-full ${side === 'left' ? 'md:flex-row-reverse' : ''} mb-8`}>
-      <div className="hidden md:block w-1/2" />
-      <div className="z-20 flex items-center order-1 bg-[#1E3A2F] shadow-xl w-10 h-10 rounded-full border-4 border-white">
-        <h1 className="mx-auto font-semibold text-lg text-white" />
-      </div>
-      <div className={`order-1 bg-white rounded-3xl border border-[#1E3A2F]/5 shadow-sm w-full md:w-1/2 px-8 py-6 ${side === 'left' ? 'md:mr-8' : 'md:ml-8'}`}>
-        <span className="text-[#1E3A2F] font-bold text-lg mb-1 block">{year}</span>
-        <h3 className="mb-2 font-medium text-xl text-[#1E3A2F] tracking-tight">{title}</h3>
-        <p className="text-sm leading-relaxed text-[#4A5D45]/70 font-light">{desc}</p>
-      </div>
-    </div>
-  );
-}
+
 
 function AwardItem({ title, year }: { title: string, year: string }) {
   return (

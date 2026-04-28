@@ -19,7 +19,7 @@ const links = [
 export default function MediaPage() {
   return (
     <main className="min-h-screen bg-background">
-      <div className="mx-auto max-w-5xl px-6 py-14">
+      <div className="site-container py-14">
         <div className="flex items-center justify-between gap-6">
           <div>
             <p className="text-xs font-semibold tracking-widest text-muted">

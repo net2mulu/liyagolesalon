@@ -9,7 +9,7 @@ export default function ServicesPage() {
       <main>
         {/* Hero Section */}
         <section className="relative bg-[#819671] pt-32 pb-20 md:pt-40 md:pb-28">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="site-container">
             <div className="flex items-center gap-2 text-white/80 mb-6">
               <span className="text-lg">✦</span>
               <span className="text-[13px] font-medium tracking-wide uppercase">Curated Services for Every Need</span>
@@ -25,7 +25,7 @@ export default function ServicesPage() {
 
         {/* Category Pills */}
         <div className="bg-[#819671] border-t border-white/10">
-          <div className="mx-auto max-w-6xl px-6 py-4 flex gap-4 overflow-x-auto no-scrollbar">
+          <div className="site-container py-4 flex gap-4 overflow-x-auto no-scrollbar">
             {serviceCategories.map((cat, idx) => (
               <button
                 key={cat.title}
@@ -40,7 +40,7 @@ export default function ServicesPage() {
         </div>
 
         {/* Featured Service Detail */}
-        <section className="mx-auto max-w-6xl px-6 py-20">
+        <section className="site-container py-20">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative aspect-[4/3] rounded-[40px] overflow-hidden group">
               <Image
@@ -73,7 +73,7 @@ export default function ServicesPage() {
 
         {/* Services Grid */}
         <section className="bg-[#F4F4E4]/50 py-24">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="site-container">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {serviceCategories[0].items.map((item) => (
                 <div key={item} className="bg-white rounded-3xl p-6 border border-[#1E3A2F]/5 hover:shadow-xl hover:shadow-[#1E3A2F]/5 transition-all group">
@@ -99,7 +99,7 @@ export default function ServicesPage() {
 
         {/* Special Packages */}
         <section className="bg-[#FDFDF5] py-24 border-t border-[#1E3A2F]/5">
-          <div className="mx-auto max-w-6xl px-6 text-center">
+          <div className="site-container text-center">
             <h2 className="text-4xl font-(--font-display) text-[#1E3A2F] mb-4 tracking-tight">Special Packages</h2>
             <p className="text-[#4A5D45]/60 mb-16 text-lg font-light">Save more with our curated service packages</p>
 
@@ -126,7 +126,7 @@ export default function ServicesPage() {
 
         {/* Philosophy Section */}
         <section className="py-24 text-center">
-          <div className="mx-auto max-w-3xl px-6">
+          <div className="site-container max-w-3xl">
             <div className="flex justify-center mb-8">
               <span className="text-3xl text-[#1E3A2F]">✦</span>
             </div>

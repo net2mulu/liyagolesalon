@@ -17,7 +17,7 @@ export default function GalleryPage() {
       <main>
         {/* Gallery Hero */}
         <section className="relative bg-[#819671] pt-32 pb-20 md:pt-40 md:pb-28 text-center text-white">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="site-container">
             <div className="flex justify-center mb-8">
               <span className="text-3xl">✦</span>
             </div>
@@ -30,7 +30,7 @@ export default function GalleryPage() {
 
         {/* Gallery Grid */}
         <section className="py-24">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="site-container">
             <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
               {galleryItems.map((item) => (
                 <div key={item.id} className="relative group overflow-hidden rounded-[32px] break-inside-avoid">
@@ -57,7 +57,7 @@ export default function GalleryPage() {
 
         {/* Meet Our Team Section (From Image) */}
         <section className="bg-[#F4F4E4]/50 py-24">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="site-container">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-(--font-display) text-[#1E3A2F] mb-4 tracking-tight">Meet Our Team</h2>
               <p className="text-[#4A5D45]/60 font-light">The dedicated professionals behind our beauty journey</p>
