@@ -153,7 +153,6 @@ export default function AboutPage() {
 
 
       <main>
-        {/* Hero Section */}
         <section className="relative bg-[#819671] pt-32 pb-20 md:pt-40 md:pb-28 text-center text-white">
 
         </section>

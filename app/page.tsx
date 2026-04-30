@@ -5,6 +5,7 @@ import GlareHover from "./components/GlareHover";
 import { HeroText } from "./components/HeroText";
 import DragElements from "./components/DragElements";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import { BookingForm } from "./components/BookingForm";
 
 const testimonials = [
   {
@@ -213,7 +214,7 @@ export default function Home() {
                 <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm">
                   <Image src="/compressed/liyagole.JPG" alt="Salon Craft 1" fill className="object-cover pointer-events-none" draggable={false} />
                 </div>
-                <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-muted font-medium">Style & Grace</p>
+                <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-[#819671] font-bold">Style & Grace</p>
               </div>
 
               {/* Image 2 */}
@@ -221,7 +222,7 @@ export default function Home() {
                 <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm">
                   <Image src="/compressed/8.webp" alt="Salon Craft 2" fill className="object-cover pointer-events-none" draggable={false} />
                 </div>
-                <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-muted font-medium">Precision Cut</p>
+                <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-[#819671] font-bold">Precision Cut</p>
               </div>
 
               {/* Image 3 */}
@@ -229,7 +230,7 @@ export default function Home() {
                 <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm">
                   <Image src="/compressed/3.webp" alt="Salon Craft 3" fill className="object-cover pointer-events-none" draggable={false} />
                 </div>
-                <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-muted font-medium">Radiant Color</p>
+                <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-[#819671] font-bold">Radiant Color</p>
               </div>
 
               {/* Image 4 */}
@@ -237,7 +238,7 @@ export default function Home() {
                 <div className="relative aspect-square w-full overflow-hidden rounded-sm">
                   <Image src="/compressed/14.jpg" alt="Salon Craft 4" fill className="object-cover pointer-events-none" draggable={false} />
                 </div>
-                <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-muted font-medium">The Experience</p>
+                <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-[#819671] font-bold">The Experience</p>
               </div>
 
               {/* Image 5 */}
@@ -245,7 +246,31 @@ export default function Home() {
                 <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm">
                   <Image src="/compressed/2.webp" alt="Salon Craft 5" fill className="object-cover pointer-events-none" draggable={false} />
                 </div>
-                <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-muted font-medium">Artistry</p>
+                <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-[#819671] font-bold">Artistry</p>
+              </div>
+
+              {/* Image 6 */}
+              <div className="w-50 bg-white p-3 shadow-xl rotate-2 transition-transform hover:rotate-0" style={{ marginTop: '100px', marginLeft: '80%' }}>
+                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm">
+                  <Image src="/compressed/11.webp" alt="Salon Craft 6" fill className="object-cover pointer-events-none" draggable={false} />
+                </div>
+                <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-[#819671] font-bold">Perfect Mani</p>
+              </div>
+
+              {/* Image 7 */}
+              <div className="w-40 bg-white p-3 shadow-xl -rotate-3 transition-transform hover:rotate-0" style={{ marginTop: '350px', marginLeft: '45%' }}>
+                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm">
+                  <Image src="/compressed/13.jpg" alt="Salon Craft 7" fill className="object-cover pointer-events-none" draggable={false} />
+                </div>
+                <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-[#819671] font-bold">Vibrant Hue</p>
+              </div>
+
+              {/* Image 8 */}
+              <div className="w-48 bg-white p-3 shadow-xl rotate-12 transition-transform hover:rotate-0" style={{ marginTop: '20px', marginLeft: '40%' }}>
+                <div className="relative aspect-square w-full overflow-hidden rounded-sm">
+                  <Image src="/compressed/4.webp" alt="Salon Craft 8" fill className="object-cover pointer-events-none" draggable={false} />
+                </div>
+                <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-[#819671] font-bold">Modern Flow</p>
               </div>
             </DragElements>
           </div>
@@ -269,32 +294,19 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="book" className="bg-background">
+        <section id="book" className="bg-[#e6e8d8]">
           <div className="site-container py-16">
-            <div className="text-center">
+            <div className="text-center mb-10 text-[#819671]">
               <h2 className="font-(--font-display) text-2xl tracking-tight">
                 Ready to Experience Elevated Beauty?
               </h2>
-              <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-muted">
+              <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 opacity-80">
                 Book your appointment today and experience the Liya Gole Salon
                 standard.
               </p>
             </div>
 
-            <div className="mx-auto mt-10 grid max-w-3xl gap-8 sm:grid-cols-3">
-              <CtaIcon title="Easy Booking" subtitle="Fast & simple" />
-              <CtaIcon title="Pro Results" subtitle="Expert finish" />
-              <CtaIcon title="Great Location" subtitle="Add address" />
-            </div>
-
-            <div className="mt-10 flex justify-center">
-              <a
-                href="mailto:booking@liyagolesalon.com?subject=Appointment%20Request%20%E2%80%94%20Liya%20Gole%20Salon"
-                className="inline-flex h-11 items-center justify-center rounded-full bg-brand px-7 text-sm font-semibold text-white shadow hover:bg-brand-2"
-              >
-                Book Your Appointment
-              </a>
-            </div>
+            <BookingForm />
           </div>
         </section>
       </main>
