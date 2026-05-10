@@ -10,38 +10,38 @@ import { BookingForm } from "./components/BookingForm";
 const testimonials = [
   {
     quote:
-      "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-    name: "Sarah Chen",
-    designation: "Product Manager at TechFlow",
-    src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "The attention to detail at Liya Gole Salon is unmatched. I've never felt more confident after a styling session. Truly a premium experience.",
+    name: "Eden Tilahun",
+    designation: "Loyal Client",
+    src: "/compressed/2.webp",
   },
   {
     quote:
-      "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-    name: "Michael Rodriguez",
-    designation: "CTO at InnovateSphere",
-    src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "I came in for hair extensions and the results exceeded my expectations. The seamless installation and volume are exactly what I wanted.",
+    name: "Selamawit Kebede",
+    designation: "Styling Enthusiast",
+    src: "/compressed/3.webp",
   },
   {
     quote:
-      "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
-    name: "Emily Watson",
-    designation: "Operations Director at CloudScale",
-    src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "The Japanese Head Spa is a game-changer. It's the most relaxing treatment I've ever had. My scalp feels rejuvenated and I feel totally refreshed.",
+    name: "Marta Haile",
+    designation: "Wellness Advocate",
+    src: "/compressed/4.webp",
   },
   {
     quote:
-      "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
-    name: "James Kim",
-    designation: "Engineering Lead at DataPro",
-    src: "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "Liya and her team are true artists. They understood exactly the look I was going for and delivered it with precision and care.",
+    name: "Hana Girma",
+    designation: "Frequent Visitor",
+    src: "/compressed/6.webp",
   },
   {
     quote:
-      "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
-    name: "Lisa Thompson",
-    designation: "VP of Technology at FutureNet",
-    src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "The professionalism and atmosphere at the salon are top-tier. It's not just a haircut, it's a complete luxury experience every time.",
+    name: "Tsion Bekele",
+    designation: "Fashion Stylist",
+    src: "/compressed/7.webp",
   },
 ];
 
@@ -102,24 +102,24 @@ export default function Home() {
 
               <div className="mt-8 grid gap-5 md:grid-cols-4">
                 <ServiceCard
-                  title="Hair Styling"
-                  body="From everyday styling to full transformations, our hair services are designed to enhance natural beauty while maintaining hair health."
+                  title="Hairstyling & Luxury Blowouts"
+                  body="Experience professional styling and transformative blowouts for every occasion, ensuring volume, shine, and effortless movement."
                   img="/compressed/1.webp"
                 />
                 <ServiceCard
-                  title="Pedicure and Menicure"
-                  body="Clean technique meets modern design for elegant, durable and trend forward results."
+                  title="Hair Extensions Installation"
+                  body="Achieve the length and volume you've always dreamed of with our seamless, professional extension installation techniques."
+                  img="/compressed/liya.JPG"
+                />
+                <ServiceCard
+                  title="Classic & Spa Pedicure"
+                  body="Clean technique meets modern design for elegant, durable results. Indulge in our restorative spa pedicure experience."
                   img="/compressed/11.webp"
                 />
                 <ServiceCard
-                  title="Treatment"
-                  body="Beyond beauty, we provide relaxing treatments that support overall well being and allow clients to recharge."
+                  title="Japanese Head Spa"
+                  body="A unique, relaxing treatment focused on scalp health and total rejuvenation, blending traditional techniques with absolute luxury."
                   img="/compressed/14.jpg"
-                />
-                <ServiceCard
-                  title="Professional Coloring"
-                  body="Transform your look with seamless color transitions that prioritize the health and integrity of your hair."
-                  img="/compressed/13.jpg"
                 />
               </div>
             </div>

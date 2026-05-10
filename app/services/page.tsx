@@ -1,164 +1,224 @@
-import Image from "next/image";
+"use client";
+import { useState, useEffect } from "react";
+import NextImage from "next/image";
 import { serviceCategories } from "@/app/lib/services";
 
+const serviceMetadata: Record<string, { img: string, desc: string }> = {
+  "Hairstyling & Luxury Blowouts": {
+    img: "/compressed/1.webp",
+    desc: "Luxury wash and professional blowout for volume and shine that lasts."
+  },
+  "Hair Extensions Installation": {
+    img: "/compressed/2.webp",
+    desc: "Seamless, high-quality extensions for natural-looking volume and length."
+  },
+  "Braids & Protective Styling": {
+    img: "/compressed/3.webp",
+    desc: "Beautifully crafted braids designed to protect and celebrate your natural hair."
+  },
+  "Professional Hair Coloring": {
+    img: "/compressed/13.jpg",
+    desc: "Expert color transitions and vibrant hues tailored to your unique style."
+  },
+  "Classic & Spa Pedicure": {
+    img: "/compressed/11.webp",
+    desc: "Indulgent foot care including exfoliation, massage, and precision polish."
+  },
+  "Luxury Manicure Services": {
+    img: "/compressed/12.webp",
+    desc: "Refined nail care and gel services for an elegant, polished finish."
+  },
+  "Face & Body Waxing": {
+    img: "/compressed/9.webp",
+    desc: "Gentle and effective hair removal for smooth, radiant skin everywhere."
+  },
+  "Eyelash Extensions": {
+    img: "/compressed/8.webp",
+    desc: "Customized lash sets to enhance your eyes with volume and elegance."
+  },
+  "Japanese Head Spa": {
+    img: "/compressed/14.jpg",
+    desc: "Deeply relaxing scalp treatment focusing on health and total rejuvenation."
+  },
+  "Relaxing Foot Massage": {
+    img: "/compressed/15.jpg",
+    desc: "Focused pressure and soothing techniques to relieve tension and stress."
+  },
+  "Professional Makeup Services": {
+    img: "/compressed/liyagole.JPG",
+    desc: "Artistic makeup application for weddings, events, or everyday luxury."
+  }
+};
+
 export default function ServicesPage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [
+    { img: "/compressed/liyagole.JPG", label: "International Standards" },
+    { img: "/compressed/liya.JPG", label: "Artistic Precision" },
+    { img: "/compressed/13.jpg", label: "Luxury Care" },
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
   return (
-    <div className="min-h-screen bg-background">
-
-
+    <div className="min-h-screen bg-[#FDFDF5]">
       <main>
-        {/* Hero Section */}
-        <section className="relative bg-[#819671] pt-32 pb-20 md:pt-40 md:pb-28">
-          <div className="site-container">
-            <div className="flex items-center gap-2 text-white/80 mb-6">
-              <span className="text-lg">✦</span>
-              <span className="text-[13px] font-medium tracking-wide uppercase">Curated Services for Every Need</span>
+        {/* Hero Section with Automated Slider */}
+        <section className="relative h-[60vh] min-h-[500px] overflow-hidden bg-[#1E3A2F] flex items-center">
+          {/* Sliding Background Images */}
+          <div className="absolute inset-0 flex transition-transform duration-1000 ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+            {slides.map((slide, idx) => (
+              <div
+                key={idx}
+                className="relative min-w-full h-full"
+              >
+                <NextImage
+                  src={slide.img}
+                  alt={slide.label}
+                  fill
+                  className="object-cover"
+                  priority={idx === 0}
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Raw Media Container Overlay (Very subtle to keep text readable) */}
+          <div className="absolute inset-0 z-10 bg-black/20" />
+
+          <div className="site-container relative z-20 w-full">
+            <div className="max-w-4xl">
+              <h1 className="font-(--font-display) text-6xl md:text-8xl leading-none text-white tracking-tighter mb-8">
+                Elevated <br />
+                <span className="text-[#819671] italic translate-x-12 md:translate-x-24 block">Artistry.</span>
+              </h1>
+
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-12 mt-16">
+                 {/* Slide Indicator */}
+                 <div className="flex gap-3">
+                    {slides.map((_, i) => (
+                      <div 
+                        key={i} 
+                        className={`h-1 transition-all duration-700 ${i === currentSlide ? 'w-12 bg-white' : 'w-4 bg-white/20'}`} 
+                      />
+                    ))}
+                 </div>
+                 <p className="max-w-md text-white/70 text-lg md:text-xl font-light leading-relaxed">
+                   Discover our curated range of premium services, where every treatment is a blend of international excellence and personalized care.
+                 </p>
+              </div>
             </div>
-            <h1 className="font-(--font-display) text-5xl md:text-7xl text-white mb-8 tracking-tight">
-              Our Services
-            </h1>
-            <p className="max-w-2xl text-lg md:text-xl text-white/80 leading-relaxed font-light">
-              From precision styling to transformative treatments, every service is delivered with intention, sophistication, and attention to detail.
-            </p>
           </div>
         </section>
 
-        {/* Category Pills */}
-        <div className="bg-[#819671] border-t border-white/10">
-          <div className="site-container py-4 flex gap-4 overflow-x-auto no-scrollbar">
-            {serviceCategories.map((cat, idx) => (
-              <button
-                key={cat.title}
-                className={`flex items-center gap-2 whitespace-nowrap px-5 py-2.5 rounded-full text-[13px] font-medium transition-all ${idx === 0 ? 'bg-[#FDFDF5] text-[#1E3A2F]' : 'bg-white/10 text-white hover:bg-white/15'
-                  }`}
-              >
-                <span className="text-base">✦</span>
-                {cat.title}
-              </button>
-            ))}
-          </div>
-        </div>
 
         {/* Featured Service Detail */}
-        <section className="site-container py-20">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative aspect-[4/3] rounded-[40px] overflow-hidden group">
-              <Image
-                src="/service-hair.svg"
-                alt="Hair Styling"
+        <section className="site-container py-24">
+          <div className="grid md:grid-cols-2 gap-20 items-center">
+            <div className="relative aspect-[4/5] rounded-[60px] overflow-hidden group shadow-2xl">
+              <NextImage
+                src="/compressed/liya.JPG"
+                alt="Liya Gole Excellence"
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover transition-transform duration-1000 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              <div className="absolute bottom-8 left-8 right-8">
-                <h3 className="text-3xl font-medium text-white mb-2 tracking-tight">Hair Styling</h3>
-                <p className="text-white/80 text-sm max-w-md leading-relaxed">
-                  Personal styling services tailored to your unique hair type and facial features.
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1E3A2F]/60 via-transparent to-transparent" />
+              <div className="absolute bottom-12 left-12 right-12 text-white">
+                <span className="text-[10px] font-bold uppercase tracking-[0.3em] mb-4 block text-white/70">Featured Specialist</span>
+                <h3 className="text-4xl font-(--font-display) mb-4 tracking-tight leading-tight italic">The Liya Gole Signature</h3>
+                <p className="text-white/80 text-base leading-relaxed font-light max-w-sm">
+                  Our signature approach blends mastery from Los Angeles and Addis Ababa to redefine your beauty journey.
                 </p>
               </div>
             </div>
-            <div className="space-y-8">
-              <h2 className="text-4xl font-(--font-display) text-[#1E3A2F] tracking-tight">Professional Excellence</h2>
-              <div className="space-y-6 text-[#4A5D45]/80 leading-relaxed">
+            <div className="space-y-10">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1E3A2F]/5 text-[#819671]">
+                <span className="text-lg">✦</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest">Our Philosophy</span>
+              </div>
+              <h2 className="text-5xl md:text-6xl font-(--font-display) text-[#1E3A2F] tracking-tighter leading-[1.1]">
+                Precision in Every <br />
+                <span className="text-[#819671] italic">Detail.</span>
+              </h2>
+              <div className="space-y-8 text-lg text-[#4A5D45]/80 leading-relaxed font-light">
                 <p>
-                  At Liya Gole Salon, every service is thoughtfully curated to prioritize both style and health. Our licensed experts use premium products and advanced techniques to ensure you leave feeling confident, refreshed, and effortlessly elevated.
+                  At Liya Gole Salon, we believe beauty isn't rushed—it's crafted. Our team of specialists is trained to international standards, ensuring your experience is both restorative and transformative.
                 </p>
-                <p>
-                  Experience luxury beauty treatments tailored to you, blending modern techniques with timeless style in a calm, refined space.
-                </p>
+                <div className="grid gap-6 pt-6">
+                  <div className="flex gap-4 items-start">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#819671] mt-2.5" />
+                    <p className="text-base text-[#1E3A2F]/70 italic">Licensed experts with over 10 years of global experience.</p>
+                  </div>
+                  <div className="flex gap-4 items-start">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#819671] mt-2.5" />
+                    <p className="text-base text-[#1E3A2F]/70 italic">Premium international products curated for all hair types.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Services Grid */}
-        <section className="bg-[#F4F4E4]/50 py-24">
+        <section className="bg-[#F4F4E4]/40 py-32">
           <div className="site-container">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {serviceCategories[0].items.map((item) => (
-                <div key={item} className="bg-white rounded-3xl p-6 border border-[#1E3A2F]/5 hover:shadow-xl hover:shadow-[#1E3A2F]/5 transition-all group">
-                  <div className="flex items-start justify-between mb-8">
-                    <div className="w-10 h-10 rounded-full bg-[#F4F4E4] flex items-center justify-center text-[#1E3A2F]">
-                      <span className="text-lg">✦</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+              {serviceCategories[0].items.map((item) => {
+                const meta = serviceMetadata[item] || { img: "/compressed/1.webp", desc: "Premium service designed for your needs." };
+                return (
+                  <div key={item} className="group flex flex-col h-full bg-white rounded-[40px] overflow-hidden border border-[#1E3A2F]/5 transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(30,58,47,0.1)] hover:-translate-y-2">
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      <NextImage
+                        src={meta.img}
+                        alt={item}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-[#1E3A2F]/5 group-hover:bg-transparent transition-colors" />
+                    </div>
+                    <div className="p-8 md:p-10 flex flex-col flex-1">
+                      <h4 className="text-2xl font-medium text-[#1E3A2F] mb-4 tracking-tight group-hover:text-[#819671] transition-colors">{item}</h4>
+                      <p className="text-base text-[#4A5D45]/70 mb-10 font-light leading-relaxed flex-1">
+                        {meta.desc}
+                      </p>
+                      <div className="pt-6 border-t border-[#1E3A2F]/5 flex items-center justify-between">
+                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#819671]">Starting at $40</span>
+                        <button className="text-[11px] font-bold uppercase tracking-widest text-[#1E3A2F] group-hover:text-[#819671] transition-all flex items-center gap-2">
+                          Book Now
+                          <span className="transition-transform group-hover:translate-x-1">→</span>
+                        </button>
+                      </div>
                     </div>
                   </div>
-                  <h4 className="text-xl font-medium text-[#1E3A2F] mb-2 tracking-tight">{item}</h4>
-                  <p className="text-sm text-[#4A5D45]/70 mb-8 font-light">
-                    Precision service designed for your daily needs and comfort.
-                  </p>
-                  <div className="flex items-center justify-between pt-6 border-t border-[#1E3A2F]/5">
-                    <button className="text-[13px] font-semibold text-white bg-[#1E3A2F] px-6 py-2.5 rounded-full hover:bg-[#2A4D3E] transition-colors">
-                      Book This Service
-                    </button>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
 
-        {/* Special Packages */}
-        <section className="bg-[#FDFDF5] py-24 border-t border-[#1E3A2F]/5">
-          <div className="site-container text-center">
-            <h2 className="text-4xl font-(--font-display) text-[#1E3A2F] mb-4 tracking-tight">Special Packages</h2>
-            <p className="text-[#4A5D45]/60 mb-16 text-lg font-light">Save more with our curated service packages</p>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              <PackageCard
-                title="Bridal Package"
-                price="550"
-                features={["Bridal Makeup & Hair Styling", "Manicure & Pedicure", "Skin Care Prep", "Consultation & Trials"]}
-              />
-              <PackageCard
-                title="Luxury Spa Day"
-                price="380"
-                highlight
-                features={["Full Hair Treatment", "Premium Facial", "Luxury Manicure & Pedi", "Aromatherapy Session"]}
-              />
-              <PackageCard
-                title="Refresh & Renew"
-                price="220"
-                features={["Hair Wash & Dry Blow", "Basic Facial", "Gel Manicure", "Brow Threading"]}
-              />
-            </div>
+        {/* Final CTA Section */}
+        <section className="py-32 bg-[#1E3A2F] relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+            <NextImage src="/pattern/3.png" alt="" fill className="object-cover" />
           </div>
-        </section>
 
-        {/* Philosophy Section */}
-        <section className="py-24 text-center">
-          <div className="site-container max-w-3xl">
-            <div className="flex justify-center mb-8">
-              <span className="text-3xl text-[#1E3A2F]">✦</span>
-            </div>
-            <h2 className="text-4xl font-(--font-display) text-[#1E3A2F] mb-8 tracking-tight">Beyond Beauty</h2>
-            <p className="text-lg text-[#4A5D45]/80 leading-relaxed font-light mb-12">
-              Liya Gole Salon introduces bespoke care through tailoring elegant services tailored to દરેક client&apos;s unique hair history, texture, and style goal. Every service is brought to life locally by our experts taking your hair health and style to the next level.
+          <div className="site-container relative z-10 text-center max-w-3xl">
+            <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-[#819671] mb-8 block">Experience the Difference</span>
+            <h2 className="text-4xl md:text-6xl font-(--font-display) text-white mb-10 tracking-tight leading-tight italic line-clamp-2">Beyond Beauty, We Craft <br /> Confidence.</h2>
+            <p className="text-lg md:text-xl text-white/70 leading-relaxed font-light mb-16 px-6 md:px-0">
+              Liya Gole Salon introduces bespoke care through elegant services tailored to every client&apos;s unique hair history, texture, and style goal.
             </p>
-            <button className="px-10 py-4 bg-[#1E3A2F] text-white rounded-full font-medium hover:bg-[#2A4D3E] transition-all">
+            <button className="px-12 py-5 bg-[#819671] text-white rounded-full font-bold uppercase tracking-widest text-xs hover:bg-[#9aac8a] hover:scale-105 transition-all shadow-xl shadow-[#819671]/20">
               Learn More About Us
             </button>
           </div>
         </section>
-
-        {/* Book Now Section */}
-        {/* <section className="bg-[#819671] py-24 relative overflow-hidden">
-          <div className="mx-auto max-w-6xl px-6 relative z-10 text-center text-white">
-             <h2 className="text-4xl md:text-5xl font-(--font-display) mb-6 tracking-tight">Ready to Book Your Service?</h2>
-             <p className="text-white/80 mb-12 text-lg font-light">Experience the refined beauty standard where beauty meets comfort.</p>
-             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-               <button className="px-10 py-4 bg-[#FDFDF5] text-[#1E3A2F] rounded-full font-semibold hover:bg-white transition-all">
-                 Book Appointment
-               </button>
-               <button className="px-10 py-4 bg-transparent border border-white/30 text-white rounded-full font-semibold hover:bg-white/10 transition-all">
-                 Call +251 912 345 678
-               </button>
-             </div>
-          </div>
-        </section> */}
-
       </main>
-
-
     </div>
   );
 }

@@ -1,29 +1,34 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { User, Mail, Phone, Sparkles, MessageCircle, Calendar, Clock, Scissors } from "lucide-react";
+import { User, Mail, Phone, Sparkles, Calendar, Clock, Scissors, Send } from "lucide-react";
 import { motion } from "motion/react";
 
 type FormState = {
   firstName: string;
   lastName: string;
   email: string;
-  phone: string;
   serviceType: string;
   date: string;
   time: string;
+  platform: "WhatsApp" | "Telegram";
 };
 
-const BOOKING_EMAIL = "booking@liyagolesalon.com";
-const WHATSAPP_NUMBER = "251911223344"; // Adjust to the salon's actual number
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "251955454647";
+const TELEGRAM_USERNAME = process.env.NEXT_PUBLIC_TELEGRAM_USERNAME || "+251955454647";
 
 const SERVICES = [
-  "Haircut & Design",
-  "Signature Styling",
-  "Restorative Treatment",
-  "Professional Coloring",
-  "Pedicure & Manicure",
-  "Special Occasion Prep"
+  "Hairstyling & Luxury Blowouts",
+  "Hair Extensions Installation",
+  "Braids & Protective Styling",
+  "Professional Hair Coloring",
+  "Classic & Spa Pedicure",
+  "Luxury Manicure Services",
+  "Face & Body Waxing",
+  "Eyelash Extensions",
+  "Japanese Head Spa",
+  "Relaxing Foot Massage",
+  "Professional Makeup Services"
 ];
 
 export function BookingForm() {
@@ -31,62 +36,42 @@ export function BookingForm() {
     firstName: "",
     lastName: "",
     email: "",
-    phone: "",
     serviceType: "",
     date: "",
     time: "",
+    platform: "WhatsApp",
   });
 
   const messageBody = useMemo(() => {
     return [
-      "✨ *New Appointment Request from Liya Gole Salon*",
-      "",
-      `Guest: ${state.firstName} ${state.lastName}`,
-      `Service: ${state.serviceType || "Not specified"}`,
-      `Preferred Date: ${state.date || "Not specified"}`,
-      `Preferred Time: ${state.time || "Not specified"}`,
-      "",
-      "--- Contact Details ---",
-      `Email: ${state.email || "-"}`,
-      `Phone: ${state.phone || "-"}`,
-      "",
-      "Sent with love from the website.",
+      "New Booking Request",
+      `First Name: ${state.firstName}`,
+      `Last Name: ${state.lastName}`,
+      `Email: ${state.email}`,
+      `Service: ${state.serviceType}`,
+      `**Preferred Date:[${state.date}]**`,
+      `**Preferred Time:[${state.time}]**`,
     ].join("\n");
   }, [state]);
 
-  const mailto = useMemo(() => {
-    const subject = `✨ Appointment Request — ${state.firstName} ${state.lastName}`;
-    return `mailto:${BOOKING_EMAIL}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(messageBody)}`;
-  }, [state.firstName, state.lastName, messageBody]);
+  const handleBooking = () => {
+    const encodedMessage = encodeURIComponent(messageBody);
+    let url = "";
 
-  const whatsappUrl = useMemo(() => {
-    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(messageBody)}`;
-  }, [messageBody]);
+    if (state.platform === "WhatsApp") {
+      url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+    } else {
+      url = `https://t.me/${TELEGRAM_USERNAME}?text=${encodedMessage}`;
+    }
+
+    window.open(url, "_blank");
+  };
 
   return (
     <div className="relative mx-auto mt-12 max-w-4xl">
       {/* Decorative Background blur */}
       <div className="absolute -top-20 -left-20 h-64 w-64 rounded-full bg-brand/5 blur-3xl" />
       <div className="absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-brand/10 blur-3xl" />
-
-      {/* Trust Note */}
-      {/* <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="mb-8 flex items-center justify-center gap-3"
-      >
-        <div className="flex -space-x-2">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="h-6 w-6 rounded-full border-2 border-white bg-[#819671]/20 shadow-sm" />
-          ))}
-        </div>
-        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#819671]/80">
-          ✨ Trusted by 500+ happy clients
-        </p>
-      </motion.div> */}
 
       <div className="overflow-hidden rounded-[40px] border border-white/40 bg-white/40 shadow-2xl backdrop-blur-xl transition-all">
         <div className="grid lg:grid-cols-5">
@@ -106,7 +91,6 @@ export function BookingForm() {
             <div className="mt-12 space-y-6">
               <Benefit icon={<Sparkles size={18} />} text="Personalized Styling" />
               <Benefit icon={<Scissors size={18} />} text="Expert Colorists" />
-              {/* <Benefit icon={<Clock size={18} />} text="Priority Booking" /> */}
             </div>
 
             <div className="mt-auto pt-16 flex items-center gap-2">
@@ -149,17 +133,7 @@ export function BookingForm() {
                 />
               </Field>
 
-              <Field label="Phone Number" icon={<Phone size={14} />}>
-                <input
-                  type="tel"
-                  value={state.phone}
-                  onChange={(e) => setState((p) => ({ ...p, phone: e.target.value }))}
-                  placeholder="+251 ..."
-                  className="peer w-full border-b border-[#819671]/20 bg-transparent py-2 text-sm outline-none transition-all placeholder:text-[#819671]/20 focus:border-[#819671]"
-                />
-              </Field>
-
-              <div className="sm:col-span-2">
+              <div className="sm:col-span-1">
                 <Field label="Select Service" icon={<Scissors size={14} />}>
                   <select
                     value={state.serviceType}
@@ -192,34 +166,41 @@ export function BookingForm() {
                   className="w-full border-b border-[#819671]/20 bg-transparent py-2 text-sm outline-none transition-all focus:border-[#819671]"
                 />
               </Field>
+
+              <div className="sm:col-span-2">
+                <Field label="Booking Platform" icon={<Send size={14} />}>
+                  <div className="flex gap-4 mt-2">
+                    {["WhatsApp", "Telegram"].map((platform) => (
+                      <label key={platform} className="flex items-center gap-2 cursor-pointer group">
+                        <input
+                          type="radio"
+                          name="platform"
+                          value={platform}
+                          checked={state.platform === platform}
+                          onChange={() => setState((p) => ({ ...p, platform: platform as any }))}
+                          className="w-4 h-4 accent-[#819671]"
+                        />
+                        <span className={`text-sm transition-colors ${state.platform === platform ? "text-[#819671] font-semibold" : "text-[#819671]/60"}`}>
+                          {platform}
+                        </span>
+                      </label>
+                    ))}
+                  </div>
+                </Field>
+              </div>
             </div>
 
             {/* Submission Section */}
-            <div className="mt-16 space-y-6">
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                <motion.a
-                  whileHover={{ scale: 1.02, backgroundColor: "#6b7d5d" }}
-                  whileTap={{ scale: 0.98 }}
-                  href={mailto}
-                  className="flex items-center justify-center gap-2 rounded-2xl bg-[#819671] py-4 text-[13px] font-semibold text-white shadow-xl shadow-[#819671]/20 transition-all"
-                >
-                  <Sparkles size={16} />
-                  Appointment Your Request
-                </motion.a>
-
-                <motion.a
-                  whileHover={{ scale: 1.02, backgroundColor: "rgba(34, 197, 94, 0.05)" }}
-                  whileTap={{ scale: 0.98 }}
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-2xl border-2 border-green-600/10 bg-white py-4 text-[13px] font-semibold text-green-700 transition-all hover:border-green-600/30"
-                >
-                  <MessageCircle size={16} className="text-green-600" />
-                  Chat & Book on WhatsApp
-                </motion.a>
-              </div>
+            <div className="mt-16">
+              <motion.button
+                whileHover={{ scale: 1.02, backgroundColor: "#6b7d5d" }}
+                whileTap={{ scale: 0.98 }}
+                onClick={handleBooking}
+                className="w-full flex items-center justify-center gap-2 rounded-2xl bg-[#819671] py-4 text-[13px] font-semibold text-white shadow-xl shadow-[#819671]/20 transition-all"
+              >
+                <Sparkles size={16} />
+                Confirm Booking on {state.platform}
+              </motion.button>
             </div>
           </div>
         </div>

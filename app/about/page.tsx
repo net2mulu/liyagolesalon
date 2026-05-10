@@ -4,142 +4,135 @@ import { Timeline } from "@/components/ui/timeline";
 
 const timelineData = [
   {
-    title: "2024",
+    title: "2011",
     content: (
       <div>
-        <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-          Built and launched Aceternity UI and Aceternity UI Pro from scratch
+        <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <span className="font-bold text-[#819671] block mb-2 text-lg">The Vision</span>
+          Wengelawit Liya Gole embarked on a mission to redefine the salon experience, blending artistry with an intentional, unhurried approach to beauty.
         </p>
         <div className="grid grid-cols-2 gap-4">
-          <img
-            src="https://assets.aceternity.com/templates/startup-1.webp"
-            alt="startup template"
+          <Image
+            src="/compressed/1.webp"
+            alt="The Vision"
             width={500}
             height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
           />
-          <img
-            src="https://assets.aceternity.com/templates/startup-2.webp"
-            alt="startup template"
+          <Image
+            src="/compressed/2.webp"
+            alt="The Vision"
             width={500}
             height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src="https://assets.aceternity.com/templates/startup-3.webp"
-            alt="startup template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src="https://assets.aceternity.com/templates/startup-4.webp"
-            alt="startup template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
           />
         </div>
       </div>
     ),
   },
   {
-    title: "Early 2023",
+    title: "2014",
     content: (
       <div>
-        <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-          I usually run out of copy, but when I see content this big, I try to
-          integrate lorem ipsum.
-        </p>
-        <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-          Lorem ipsum is for people who are too lazy to write copy. But we are
-          not. Here are some more example of beautiful designs I built.
+        <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <span className="font-bold text-[#819671] block mb-2 text-lg">Expanding the Craft</span>
+          Building on a growing reputation for excellence, we moved to a larger space to better serve our community with enhanced precision and care.
         </p>
         <div className="grid grid-cols-2 gap-4">
-          <img
-            src="https://assets.aceternity.com/pro/hero-sections.png"
-            alt="hero template"
+          <Image
+            src="/compressed/3.webp"
+            alt="Expanding the Craft"
             width={500}
             height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
           />
-          <img
-            src="https://assets.aceternity.com/features-section.png"
-            alt="feature template"
+          <Image
+            src="/compressed/4.webp"
+            alt="Expanding the Craft"
             width={500}
             height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src="https://assets.aceternity.com/pro/bento-grids.png"
-            alt="bento template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src="https://assets.aceternity.com/cards.png"
-            alt="cards template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
           />
         </div>
       </div>
     ),
   },
   {
-    title: "Changelog",
+    title: "2018",
     content: (
       <div>
-        <p className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-          Deployed 5 new components on Aceternity today
+        <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <span className="font-bold text-[#819671] block mb-2 text-lg">Global Standards</span>
+          Drawing on a decade of industry expertise across Addis Ababa, Los Angeles, and the DMV area, the salon established an international benchmark for luxury beauty in the region.
         </p>
-        <div className="mb-8">
-          <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-            ✅ Card grid component
-          </div>
-          <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-            ✅ Startup template Aceternity
-          </div>
-          <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-            ✅ Random file upload lol
-          </div>
-          <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-            ✅ Himesh Reshammiya Music CD
-          </div>
-          <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-            ✅ Salman Bhai Fan Club registrations open
-          </div>
-        </div>
         <div className="grid grid-cols-2 gap-4">
-          <img
-            src="https://assets.aceternity.com/pro/hero-sections.png"
-            alt="hero template"
+          <Image
+            src="/compressed/6.webp"
+            alt="Global Standards"
             width={500}
             height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
           />
-          <img
-            src="https://assets.aceternity.com/features-section.png"
-            alt="feature template"
+          <Image
+            src="/compressed/8.webp"
+            alt="Global Standards"
             width={500}
             height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
           />
-          <img
-            src="https://assets.aceternity.com/pro/bento-grids.png"
-            alt="bento template"
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: "2021",
+    content: (
+      <div>
+        <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <span className="font-bold text-[#819671] block mb-2 text-lg">Innovation & Education</span>
+          We launched our specialized education wing, where Liya Gole’s experience as a renowned instructor helps nurture the next generation of professional stylists.
+        </p>
+        <div className="grid grid-cols-2 gap-4">
+          <Image
+            src="/compressed/9.webp"
+            alt="Innovation & Education"
             width={500}
             height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
           />
-          <img
-            src="https://assets.aceternity.com/cards.png"
-            alt="cards template"
+          <Image
+            src="/compressed/11.webp"
+            alt="Innovation & Education"
             width={500}
             height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
+          />
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: "2025",
+    content: (
+      <div>
+        <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <span className="font-bold text-[#819671] block mb-2 text-lg">From Prep to Perfection</span>
+          Today, we continue our legacy of excellence with a refreshed sanctuary and expanded services, ensuring every client leaves feeling effortlessly beautiful.
+        </p>
+        <div className="grid grid-cols-2 gap-4">
+          <Image
+            src="/compressed/liyagole.JPG"
+            alt="From Prep to Perfection"
+            width={500}
+            height={500}
+            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
+          />
+          <Image
+            src="/compressed/14.jpg"
+            alt="From Prep to Perfection"
+            width={500}
+            height={500}
+            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
           />
         </div>
       </div>
@@ -153,32 +146,93 @@ export default function AboutPage() {
 
 
       <main>
-        <section className="relative bg-[#819671] pt-32 pb-20 md:pt-40 md:pb-28 text-center text-white">
+        {/* <section className="relative bg-[#819671] pt-32 pb-20 md:pt-40 md:pb-28 text-center text-white">
 
-        </section>
+        </section> */}
 
         {/* Philosophy Section */}
-        <section className="py-24 text-center">
-          <div className="site-container">
-            <h1 className="font-(--font-display) text-5xl md:text-7xl mb-8 tracking-tight">The Foundation of Excellence</h1>
-            <p>
-              Liya Gole Salon was founded by Wengelawit Liya Gole, a renowned makeup artist and
-              instructor whose expertise spans Addis Ababa, Los Angeles, and the DMV Area. Born from
-              a simple idea that beauty should be intentional and not rushed, the salon is the culmination
-              of over 10 years of industry experience. What began as a deep passion for self expression
-              and refined artistry has grown into a premier destination where international standards of
-              luxury meet personalized care.
-            </p>
+        <section className="py-24 md:py-32 relative overflow-hidden bg-[#FDFDF5]">
+          {/* Decorative Background Element */}
+          <div className="absolute top-0 right-0 w-1/2 h-full opacity-[0.02] pointer-events-none select-none overflow-hidden hidden lg:block">
+            <span className="absolute -top-20 -right-20 text-[25rem] font-(--font-display) text-[#1E3A2F]">LG</span>
           </div>
 
-          <div className="site-container max-w-4xl">
-            <h2 className="text-4xl md:text-5xl font-(--font-display) text-[#1E3A2F] mb-10 tracking-tight">OUR MISSION</h2>
-            <div className="space-y-8 text-lg text-[#4A5D45]/80 leading-relaxed font-light">
-              <p>
-                Our mission is to enhance your natural beauty through a curated blend of sophisticated
-                artistry and restorative care, setting a premium standard for quality that empowers you to
-                express your truest self with confidence.
-              </p>
+          <div className="site-container relative z-10">
+            {/* Header Section */}
+            <div className="grid lg:grid-cols-12 gap-12 items-end mb-24">
+              <div className="lg:col-span-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="h-px w-12 bg-[#819671]" />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#819671]">The Foundation</span>
+                </div>
+                <h1 className="font-(--font-display) text-5xl md:text-8xl leading-[0.95] tracking-tighter text-[#1E3A2F]">
+                  Excellence as a <br />
+                  <span className="italic text-[#819671]">New Standard.</span>
+                </h1>
+              </div>
+              <div className="lg:col-span-4 lg:pb-3">
+                <p className="text-lg text-[#4A5D45]/70 leading-relaxed font-light border-l-2 border-[#819671]/20 pl-8">
+                  Liya Gole Salon was founded by Wengelawit Liya Gole, a renowned makeup artist whose expertise spans from Addis Ababa to Los Angeles.
+                </p>
+              </div>
+            </div>
+
+            {/* Content & Mission Grid */}
+            <div className="grid lg:grid-cols-12 gap-16 items-start mt-20">
+              {/* Image Side */}
+              <div className="lg:col-span-6 relative group">
+                <div className="relative aspect-[4/5] rounded-[48px] overflow-hidden shadow-2xl z-20">
+                  <Image
+                    src="/compressed/liya.JPG"
+                    alt="Wengelawit Liya Gole"
+                    fill
+                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1E3A2F]/40 to-transparent" />
+                </div>
+                {/* Decorative floating badge */}
+                <div className="absolute -bottom-6 -right-6 h-32 w-32 bg-[#819671] rounded-full flex items-center justify-center text-white z-30 shadow-xl border-8 border-[#FDFDF5]">
+                  <div className="text-center">
+                    <span className="block text-2xl font-bold leading-none">10+</span>
+                    <span className="text-[8px] uppercase tracking-widest font-medium opacity-80">Years EXP</span>
+                  </div>
+                </div>
+                {/* Visual accent behind image */}
+                <div className="absolute -top-8 -left-8 w-64 h-64 border border-[#819671]/20 rounded-[48px] -z-10" />
+              </div>
+
+              {/* Text Side */}
+              <div className="lg:col-span-6 flex flex-col justify-center h-full">
+                <div className="space-y-16">
+                  <div className="relative">
+                    <p className="text-xl md:text-2xl text-[#1E3A2F] leading-relaxed font-light">
+                      Born from a simple idea that <span className="font-medium">beauty should be intentional</span> and not rushed, the salon is the culmination of over 10 years of industry experience.
+                    </p>
+                    <p className="mt-8 text-neutral-600 leading-relaxed font-light">
+                      What began as a deep passion for self-expression and refined artistry has grown into a premier destination where international standards of luxury meet personalized care. 
+                    </p>
+                  </div>
+
+                  {/* Mission Card */}
+                  <div className="relative p-10 md:p-14 bg-[#1E3A2F] text-white rounded-[48px] shadow-2xl overflow-hidden group">
+                    {/* Background visual detail */}
+                    <div className="absolute top-0 right-0 p-8 opacity-5 transition-transform duration-[2s] group-hover:rotate-45">
+                      <span className="text-[12rem] font-(--font-display)">✦</span>
+                    </div>
+
+                    <div className="relative z-10">
+                      <div className="inline-flex items-center gap-2 mb-8 bg-white/10 px-4 py-1.5 rounded-full backdrop-blur-md">
+                        <span className="text-[#819671]">✦</span>
+                        <span className="text-[9px] font-bold uppercase tracking-[0.3em]">Our Mission</span>
+                      </div>
+                      <h2 className="text-3xl md:text-4xl font-(--font-display) mb-8 tracking-tight italic">To enhance natural beauty through sophisticated artistry.</h2>
+                      <p className="text-lg text-white/70 leading-relaxed font-light">
+                        Our goal is to set a premium standard for quality that empowers you to express your truest self with confidence through restorative care and refined precision.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

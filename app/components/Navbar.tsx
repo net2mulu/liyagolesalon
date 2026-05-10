@@ -52,7 +52,7 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <a
             href="/contact"
-            className={`hidden md:inline-flex h-11 items-center justify-center rounded-full px-7 text-[11px] font-bold uppercase tracking-widest transition-all duration-300 shadow-md ${
+            className={`hidden md:inline-flex h-11 items-center justify-center rounded-full px-7 text-[11px] font-bold uppercase tracking-widest transition-all duration-300 shadow-md focus:outline-none ${
               isScrolled 
                 ? "bg-white text-[#819671] hover:bg-white/90" 
                 : "bg-white text-[#1E3A2F] hover:shadow-xl hover:shadow-white/20"
@@ -108,10 +108,10 @@ function NavLink({ href, label }: { href: string; label: string }) {
   return (
     <a 
       href={href} 
-      className="group relative text-[11px] font-bold uppercase tracking-[0.2em] text-white/80 hover:text-white transition-colors"
+      className="group relative text-[11px] font-bold uppercase tracking-[0.2em] text-white/80 hover:text-white transition-colors focus:outline-none"
     >
       {label}
-      <span className="absolute -bottom-1 left-0 h-[1.5px] w-0 bg-[#819671] transition-all duration-300 group-hover:w-full" />
+      <span className="absolute -bottom-1 left-0 h-[1.5px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
     </a>
   );
 }
@@ -121,7 +121,7 @@ function MobileNavLink({ href, label, onClick }: { href: string; label: string; 
     <a 
       href={href} 
       onClick={onClick}
-      className="block text-4xl font-(--font-display) text-white/90 hover:text-[#819671] transition-colors"
+      className="block text-4xl font-(--font-display) text-white/90 hover:text-white transition-colors focus:outline-none"
     >
       {label}
     </a>

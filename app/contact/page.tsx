@@ -1,158 +1,151 @@
 import Image from "next/image";
+import { BookingForm } from "@/app/components/BookingForm";
 
 export default function ContactPage() {
    return (
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-[#FDFDF5] text-[#1E3A2F]">
          <main>
-            {/* Contact Hero */}
-            {/* <section className="relative bg-[#819671] pt-32 pb-20 md:pt-40 md:pb-28 text-white">
-               <div className="site-container">
-                  <div className="flex items-center gap-2 text-white/80 mb-6">
-                     <span className="text-lg">✉</span>
-                     <span className="text-[13px] font-medium tracking-wide uppercase">We&apos;d Love to Hear From You</span>
-                  </div>
-                  <h1 className="font-(--font-display) text-5xl md:text-7xl mb-8 tracking-tight">Get In Touch</h1>
-                  <p className="max-w-2xl text-lg md:text-xl text-white/80 leading-relaxed font-light">
-                     Have questions or ready to book? Reach out and let&apos;s start your beauty journey together.
-                  </p>
+            {/* Booking Form Section */}
+            <section className="bg-[#e6e8d8] py-24 relative overflow-hidden">
+               {/* Background pattern */}
+               <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none select-none">
+                  <span className="text-[20vw] font-bold text-black whitespace-nowrap">BOOK NOW BOOK NOW</span>
                </div>
-            </section> */}
 
-            {/* Contact Info Grid */}
-            <section className="py-24 bg-white text-[#819671]">
+               <div className="site-container relative z-10">
+                  <div className="text-center mb-20">
+                     <div className="inline-flex items-center gap-2 mb-6 px-4 py-1 rounded-full bg-white/20 text-[#1E3A2F]/80 backdrop-blur-md">
+                        <span className="text-[10px] font-bold uppercase tracking-widest leading-none">Your Next Look Starts Here</span>
+                     </div>
+                     <h2 className="text-5xl md:text-7xl font-(--font-display) text-[#819671] mb-8 tracking-tighter italic">Effortless Excellence.</h2>
+                     <p className="max-w-2xl mx-auto text-lg md:text-xl text-[#4A5D45]/70 font-light">
+                        Select your preferred service and platform below. We&apos;ll handle the rest.
+                     </p>
+                  </div>
+                  <BookingForm />
+               </div>
+            </section>
+
+            {/* Contact Hero: Editorial Split */}
+            <section className="relative pt-32 pb-24 md:pt-48 md:pb-32 overflow-hidden bg-[#FDFDF5]">
+               <div className="site-container relative z-10">
+                  <div className="grid lg:grid-cols-2 gap-16 md:gap-24 items-center">
+                     {/* Left: Typography */}
+                     <div className="relative z-20">
+                        <div className="inline-flex items-center gap-4 mb-8">
+                           <div className="h-px w-10 bg-[#819671]/40" />
+                           <span className="text-[10px] font-bold uppercase tracking-[0.6em] text-[#819671]">Studio Concierge</span>
+                        </div>
+                        
+                        <h1 className="font-(--font-display) text-6xl md:text-[9vw] leading-[0.8] text-[#1E3A2F] tracking-tighter mb-10">
+                           Beauty <br />
+                           <span className="italic text-[#819671]">Coordinate.</span>
+                        </h1>
+                        
+                        <div className="max-w-md border-l-2 border-[#819671]/10 pl-10 py-2">
+                           <p className="text-lg md:text-xl text-[#4A5D45]/60 leading-relaxed font-light mb-8">
+                              Our consultants are ready to tailor your luxury journey. Reach out to secure your moment of transformation.
+                           </p>
+                           <div className="flex items-center gap-4">
+                              <div className="w-1.5 h-1.5 rounded-full bg-[#819671] animate-pulse" />
+                              <span className="text-[10px] font-bold uppercase tracking-widest text-[#1E3A2F]/40">Response within 24 hours</span>
+                           </div>
+                        </div>
+                     </div>
+
+                     {/* Right: The Portrait */}
+                     <div className="relative aspect-[4/5] md:aspect-[3/4] rounded-[80px] lg:rounded-[120px] overflow-hidden shadow-2xl group">
+                        <Image 
+                           src="/compressed/liyagole.JPG" 
+                           alt="Liya Gole Salon Ambience" 
+                           fill 
+                           className="object-cover transition-transform duration-[3s] group-hover:scale-110" 
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#1E3A2F]/20 via-transparent to-transparent" />
+                        
+                        {/* Interactive floating label */}
+                        <div className="absolute bottom-10 left-10 right-10 p-8 bg-white/10 backdrop-blur-md rounded-[40px] border border-white/20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700">
+                           <p className="text-white text-xs font-bold uppercase tracking-widest text-center">Visit our Sanctuary</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               {/* Background Technical Watermark */}
+               <div className="absolute bottom-10 left-10 pointer-events-none opacity-[0.03] select-none hidden lg:block">
+                  <span className="text-[8vw] font-bold text-[#1E3A2F]">CONCIERGE_002</span>
+               </div>
+            </section>
+
+            {/* FAQ Section */}
+            <section className="py-32 bg-[#F9F9F0]">
                <div className="site-container">
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                  <div className="grid lg:grid-cols-12 gap-16">
+                     <div className="lg:col-span-4">
+                        <div className="sticky top-40">
+                           <h2 className="text-4xl md:text-5xl font-(--font-display) text-[#1E3A2F] mb-8 tracking-tight">CURIOSITIES & ANSWERS</h2>
+                           <p className="text-[#4A5D45]/60 text-lg font-light leading-relaxed mb-12">
+                              Everything you need to know about your luxury salon experience at Liya Gole.
+                           </p>
+                           <button className="px-8 py-3 bg-[#1E3A2F] text-white rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#819671] transition-all">
+                              Download Price List
+                           </button>
+                        </div>
+                     </div>
+                     <div className="lg:col-span-8 space-y-4">
+                        <FaqItem q="Do I need to book an appointment?" a="Yes, we recommend booking in advance to ensure availability. Personalized care takes time, and we want to ensure you receive our full attention." />
+                        <FaqItem q="What is your cancellation policy?" a="We require 24-hour notice for cancellations. This allows us to offer the appointment to another client waiting for a transformation." />
+                        <FaqItem q="Do you offer bridal services?" a="Absolutely. We specialize in bridal makeup and hair, offering bespoke packages that include trials and on-site services." />
+                        <FaqItem q="What payment methods do you accept?" a="We accept all major credit cards, cash, and local digital payment methods including Telebirr and CBE Birr." />
+                        <FaqItem q="Can I walk in for a consultation?" a="While we prefer scheduled sessions, walk-ins are welcome if a stylist is available for a brief complementary conversation." />
+                     </div>
+                  </div>
+               </div>
+            </section>
+
+            {/* Contact Info Cards */}
+            <section className="py-32 bg-white relative">
+               <div className="site-container">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                      <ContactInfoCard
-                        icon="📞"
-                        title="Phone"
-                        lines={["+251 912 345 678", "+251 911 234 567"]}
-                        linkText="Call Us →"
+                        icon="✦"
+                        title="Direct Line"
+                        lines={["+251 955 454 647", "WhatsApp Available"]}
+                        linkText="Call Appointment"
+                        href="tel:+251955454647"
                      />
                      <ContactInfoCard
                         icon="✉"
-                        title="Email"
-                        lines={["info@liyagolesalon.com", "bookings@liyagolesalon.com"]}
-                        linkText="Send Email →"
+                        title="Digital Concierge"
+                        lines={["info@liyagolesalon.com", "liyagole@gmail.com"]}
+                        linkText="Send Inquiries"
+                        href="mailto:info@liyagolesalon.com"
                      />
                      <ContactInfoCard
                         icon="📍"
-                        title="Address"
-                        lines={["Bole Road, Addis Ababa", "Near Edna Mall, Ethiopia"]}
-                        linkText="Get Directions →"
+                        title="The Sanctuary"
+                        lines={["Bole Road, Addis Ababa", "Ethiopia"]}
+                        linkText="Open in Maps"
+                        href="https://maps.google.com"
                      />
                   </div>
                </div>
             </section>
 
-            {/* Form & Sidebar Section */}
-            <section className="bg-[#e6e8d8] py-24">
-               <div className="site-container">
-                  <div className="grid lg:grid-cols-3 gap-16">
-                     {/* Contact Form */}
-                     <div className="lg:col-span-2 bg-white p-12 rounded-[40px] shadow-sm">
-                        <h2 className="text-3xl font-(--font-display) text-[#819671] mb-4 tracking-tight">Send Us a Message</h2>
-                        <p className="text-[#4A5D45]/60 mb-10 font-light">Fill out the form below and we&apos;ll get back to you within 24 hours.</p>
-
-                        <form className="space-y-8">
-                           <div className="grid md:grid-cols-2 gap-8">
-                              <div className="space-y-2">
-                                 <label className="text-[12px] font-bold uppercase tracking-widest text-[#819671]/40">Full Name *</label>
-                                 <input type="text" placeholder="Enter your name" className="w-full bg-[#FDFDF5] border border-[#1E3A2F]/5 rounded-2xl px-6 py-4 outline-none focus:border-[#4A5D45]/20" />
-                              </div>
-                              <div className="space-y-2">
-                                 <label className="text-[12px] font-bold uppercase tracking-widest text-[#819671]/40">Email Address *</label>
-                                 <input type="email" placeholder="Enter your email" className="w-full bg-[#FDFDF5] border border-[#1E3A2F]/5 rounded-2xl px-6 py-4 outline-none focus:border-[#4A5D45]/20" />
-                              </div>
-                           </div>
-                           <div className="space-y-2">
-                              <label className="text-[12px] font-bold uppercase tracking-widest text-[#819671]/40">Message *</label>
-                              <textarea rows={5} placeholder="Tell us about your needs or questions..." className="w-full bg-[#FDFDF5] border border-[#1E3A2F]/5 rounded-2xl px-6 py-4 outline-none focus:border-[#4A5D45]/20 resize-none"></textarea>
-                           </div>
-                           <button className="bg-[#1E3A2F] text-white px-10 py-5 rounded-full font-semibold hover:bg-[#2A4D3E] transition-all flex items-center gap-3">
-                              <span>Send Message</span>
-                              <span className="text-lg">↗</span>
-                           </button>
-                        </form>
-                     </div>
-
-                     {/* Sidebar */}
-                     <div className="space-y-8">
-                        {/* Follow Us */}
-                        <div className="bg-[#819671] p-10 rounded-[40px] text-white">
-                           <h3 className="text-xl font-medium mb-4 tracking-tight">Follow Us</h3>
-                           <p className="text-white/60 text-sm font-light leading-relaxed mb-8">Stay connected for beauty tips, special offers, and behind-the-scenes content.</p>
-                           <div className="flex gap-4">
-                              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all cursor-pointer">IG</div>
-                              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all cursor-pointer">TK</div>
-                              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all cursor-pointer">FB</div>
+            {/* Location & Map Experience */}
+            <section className="py-0 relative">
+               <div className="h-[600px] w-full relative">
+                  <div className="absolute inset-0 bg-[#E8E8D0] grayscale group hover:grayscale-0 transition-all duration-1000">
+                     <div className="w-full h-full bg-[#1E3A2F]/5 flex items-center justify-center">
+                        <div className="bg-white p-16 rounded-[60px] shadow-2xl text-center max-w-lg relative z-20 transition-transform group-hover:scale-105">
+                           <div className="w-20 h-20 bg-[#1E3A2F] text-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-xl text-3xl">📍</div>
+                           <h4 className="text-3xl font-(--font-display) text-[#1E3A2F] mb-4">Liya Gole Salon</h4>
+                           <p className="text-[#4A5D45]/60 text-lg mb-10 font-light">Bole Road, Addis Ababa, Ethiopia <br /> Near Edna Mall Area</p>
+                           <div className="flex gap-4 justify-center">
+                              <a href="https://maps.google.com" target="_blank" className="bg-[#819671] text-white px-8 py-3 rounded-full text-xs font-bold tracking-widest uppercase">Directions</a>
+                              <a href="tel:+251955454647" className="border border-[#1E3A2F]/10 text-[#1E3A2F] px-8 py-3 rounded-full text-xs font-bold tracking-widest uppercase">Call Us</a>
                            </div>
                         </div>
-
-                        {/* Quick Book */}
-                        <div className="bg-[#FDFDF5] p-10 rounded-[40px] border border-[#1E3A2F]/10">
-                           <h3 className="text-xl font-medium text-[#819671] mb-4 tracking-tight">Ready to Book?</h3>
-                           <p className="text-[#4A5D45]/60 text-sm font-light mb-8">Skip the form and book your appointment directly.</p>
-                           <div className="space-y-3">
-                              <button className="w-full bg-[#1E3A2F] text-white py-4 rounded-full font-semibold">Book Online Now</button>
-                              <button className="w-full bg-transparent border border-[#1E3A2F]/10 text-[#819671] py-4 rounded-full font-semibold">Call +251 912 345 678</button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </section>
-
-            {/* FAQs */}
-            <section className="py-24 bg-[#e6e8d8]">
-               <div className="site-container">
-                  <div className="text-center mb-16">
-                     <h2 className="text-4xl font-(--font-display) text-[#819671] mb-4 tracking-tight">Frequently Asked Questions</h2>
-                     <p className="text-[#4A5D45]/60 font-light">Quick answers to common questions</p>
-                  </div>
-                  <div className="grid md:grid-cols-2 gap-8">
-                     <FaqItem q="Do I need to book an appointment?" a="Yes, we recommend booking in advance to ensure availability. Walk-ins are welcome based on stylist availability." />
-                     <FaqItem q="What is your cancellation policy?" a="We require 24-hour notice for cancellations. Late cancellations may be subject to a fee." />
-                     <FaqItem q="Do you offer consultations?" a="Yes! We offer complementary consultations for all services to discuss your beauty goals." />
-                     <FaqItem q="What payment methods do you accept?" a="We accept cash, all major credit cards, and local mobile payment methods (Telebirr/CBE Birr)." />
-                  </div>
-                  <div className="mt-16 text-center">
-                     <p className="text-[#4A5D45]/60 mb-6">Can&apos;t find what you&apos;re looking for?</p>
-                     <button className="px-10 py-3 border border-[#1E3A2F]/10 text-[#819671] rounded-full text-sm font-medium">View All FAQs</button>
-                  </div>
-               </div>
-            </section>
-
-            {/* Map Section */}
-            <section className="py-24 bg-white text-[#819671]">
-               <div className="site-container text-center">
-                  <h2 className="text-4xl font-(--font-display) text-[#819671] mb-4 tracking-tight">Visit Our Salon</h2>
-                  <p className="text-[#4A5D45]/60 font-light mb-16">Conveniently located in the heart of the city</p>
-
-                  <div className="relative h-[500px] w-full bg-[#F4F4E4] rounded-[60px] overflow-hidden group shadow-2xl">
-                     <div className="absolute inset-0 bg-[#E8E8D0] flex items-center justify-center">
-                        <div className="text-center space-y-6">
-                           <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto shadow-lg text-2xl">📍</div>
-                           <div>
-                              <h4 className="text-2xl font-medium text-[#819671] mb-1">Liya Gole Salon</h4>
-                              <p className="text-[#4A5D45]/60">Bole Road, Addis Ababa, Ethiopia</p>
-                           </div>
-                           <button className="bg-[#1E3A2F] text-white px-8 py-3 rounded-full text-sm font-bold tracking-widest uppercase">Get Directions</button>
-                        </div>
-                     </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-3 gap-12 mt-20">
-                     <div>
-                        <h5 className="font-bold text-[#819671] mb-4 uppercase tracking-widest text-[13px]">Parking</h5>
-                        <p className="text-[#4A5D45]/60 text-sm font-light">Free street parking and nearby parking garage.</p>
-                     </div>
-                     <div>
-                        <h5 className="font-bold text-[#819671] mb-4 uppercase tracking-widest text-[13px]">Public Transit</h5>
-                        <p className="text-[#4A5D45]/60 text-sm font-light">2 blocks from Bole Medhanealem Light Rail Station.</p>
-                     </div>
-                     <div>
-                        <h5 className="font-bold text-[#819671] mb-4 uppercase tracking-widest text-[13px]">Accessibility</h5>
-                        <p className="text-[#4A5D45]/60 text-sm font-light">Wheelchair accessible entrance and facilities.</p>
                      </div>
                   </div>
                </div>
@@ -162,26 +155,28 @@ export default function ContactPage() {
    );
 }
 
-function ContactInfoCard({ icon, title, lines, linkText }: { icon: string, title: string, lines: string[], linkText: string }) {
+function ContactInfoCard({ icon, title, lines, linkText, href }: { icon: string, title: string, lines: string[], linkText: string, href: string }) {
    return (
-      <div className="bg-white p-10 rounded-[40px] border border-[#1E3A2F]/5 flex flex-col items-center text-center group hover:shadow-xl transition-all">
-         <div className="w-16 h-16 rounded-full bg-[#F4F4E4] flex items-center justify-center text-2xl mb-8 group-hover:bg-[#1E3A2F] group-hover:text-white transition-all">
+      <a href={href} className="group p-12 rounded-[50px] bg-[#F9F9F0]/50 border border-[#1E3A2F]/5 flex flex-col items-center text-center transition-all duration-500 hover:bg-white hover:shadow-2xl hover:shadow-[#1E3A2F]/5 hover:-translate-y-3">
+         <div className="w-20 h-20 rounded-full border border-[#819671]/20 flex items-center justify-center text-3xl mb-10 group-hover:bg-[#819671] group-hover:text-white group-hover:border-[#819671] transition-all duration-500">
             {icon}
          </div>
-         <h3 className="text-xl font-medium text-[#819671] mb-6 tracking-tight">{title}</h3>
-         <div className="space-y-2 mb-8 flex-grow">
-            {lines.map((l, i) => <p key={i} className="text-[#4A5D45]/70 text-sm font-light">{l}</p>)}
+         <h3 className="text-2xl font-(--font-display) text-[#1E3A2F] mb-6 tracking-tight">{title}</h3>
+         <div className="space-y-2 mb-10 flex-grow">
+            {lines.map((l, i) => <p key={i} className="text-[#4A5D45]/60 text-base font-light tracking-tight">{l}</p>)}
          </div>
-         <span className="text-[13px] font-bold text-[#819671] uppercase tracking-widest group-hover:translate-x-1 transition-transform cursor-pointer">{linkText}</span>
-      </div>
+         <span className="text-[11px] font-bold text-[#819671] uppercase tracking-[0.3em] inline-flex items-center gap-2 group-hover:gap-4 transition-all">
+            {linkText} <span className="text-lg">→</span>
+         </span>
+      </a>
    );
 }
 
 function FaqItem({ q, a }: { q: string, a: string }) {
    return (
-      <div className="bg-white p-10 rounded-[40px] text-left border border-[#1E3A2F]/3 group hover:border-[#4A5D45]/10 transition-all">
-         <h4 className="text-xl font-medium text-[#819671] mb-4 tracking-tight">{q}</h4>
-         <p className="text-[#4A5D45]/70 text-sm leading-relaxed font-light">{a}</p>
+      <div className="p-10 rounded-[48px] bg-white border border-[#1E3A2F]/3 transition-all duration-500 hover:shadow-xl hover:shadow-[#1E3A2F]/5 group">
+         <h4 className="text-2xl font-medium text-[#1E3A2F] mb-6 tracking-tight group-hover:text-[#819671] transition-colors">{q}</h4>
+         <p className="text-[#4A5D45]/70 text-lg leading-relaxed font-light">{a}</p>
       </div>
    );
 }

@@ -46,7 +46,7 @@ export default function Footer() {
           <div>
             <p className="text-sm font-semibold">Contact Us</p>
             <div className="mt-3 grid gap-2 text-sm text-white/70">
-              <p>Phone: add your number</p>
+              <p>Phone: +251 955 454 647</p>
               <p>Email: booking@liyagolesalon.com</p>
               <p>Address: add your address</p>
             </div>
