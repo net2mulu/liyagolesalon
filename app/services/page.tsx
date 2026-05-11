@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import NextImage from "next/image";
+import { useRouter } from "next/navigation";
 import { serviceCategories } from "@/app/lib/services";
 
 const serviceMetadata: Record<string, { img: string, desc: string }> = {
@@ -51,7 +52,12 @@ const serviceMetadata: Record<string, { img: string, desc: string }> = {
 };
 
 export default function ServicesPage() {
+  const router = useRouter();
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const handleBook = (service: string) => {
+    router.push(`/contact?service=${encodeURIComponent(service)}`);
+  };
   const slides = [
     { img: "/compressed/liyagole.JPG", label: "International Standards" },
     { img: "/compressed/liya.JPG", label: "Artistic Precision" },
@@ -171,7 +177,11 @@ export default function ServicesPage() {
               {serviceCategories[0].items.map((item) => {
                 const meta = serviceMetadata[item] || { img: "/compressed/1.webp", desc: "Premium service designed for your needs." };
                 return (
-                  <div key={item} className="group flex flex-col h-full bg-white rounded-[40px] overflow-hidden border border-[#1E3A2F]/5 transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(30,58,47,0.1)] hover:-translate-y-2">
+                  <div 
+                    key={item} 
+                    onClick={() => handleBook(item)}
+                    className="group flex flex-col h-full bg-white rounded-[40px] overflow-hidden border border-[#1E3A2F]/5 transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(30,58,47,0.1)] hover:-translate-y-2 cursor-pointer"
+                  >
                     <div className="relative aspect-[16/10] overflow-hidden">
                       <NextImage
                         src={meta.img}
@@ -188,10 +198,10 @@ export default function ServicesPage() {
                       </p>
                       <div className="pt-6 border-t border-[#1E3A2F]/5 flex items-center justify-between">
                         <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#819671]">Starting at $40</span>
-                        <button className="text-[11px] font-bold uppercase tracking-widest text-[#1E3A2F] group-hover:text-[#819671] transition-all flex items-center gap-2">
+                        <div className="text-[11px] font-bold uppercase tracking-widest text-[#1E3A2F] group-hover:text-[#819671] transition-all flex items-center gap-2">
                           Book Now
                           <span className="transition-transform group-hover:translate-x-1">→</span>
-                        </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -213,9 +223,6 @@ export default function ServicesPage() {
             <p className="text-lg md:text-xl text-white/70 leading-relaxed font-light mb-16 px-6 md:px-0">
               Liya Gole Salon introduces bespoke care through elegant services tailored to every client&apos;s unique hair history, texture, and style goal.
             </p>
-            <button className="px-12 py-5 bg-[#819671] text-white rounded-full font-bold uppercase tracking-widest text-xs hover:bg-[#9aac8a] hover:scale-105 transition-all shadow-xl shadow-[#819671]/20">
-              Learn More About Us
-            </button>
           </div>
         </section>
       </main>
@@ -223,7 +230,7 @@ export default function ServicesPage() {
   );
 }
 
-function PackageCard({ title, price, features, highlight = false }: { title: string, price: string, features: string[], highlight?: boolean }) {
+function PackageCard({ title, price, features, onBook, highlight = false }: { title: string, price: string, features: string[], onBook: () => void, highlight?: boolean }) {
   return (
     <div className={`rounded-[40px] p-10 flex flex-col text-left transition-all ${highlight ? 'bg-[#1E3A2F] text-white shadow-2xl scale-105' : 'bg-white text-[#1E3A2F] border border-[#1E3A2F]/5'
       }`}>
@@ -241,7 +248,9 @@ function PackageCard({ title, price, features, highlight = false }: { title: str
           </li>
         ))}
       </ul>
-      <button className={`w-full py-4 rounded-full font-semibold transition-all ${highlight ? 'bg-[#FDFDF5] text-[#1E3A2F] hover:bg-white' : 'bg-[#1E3A2F] text-white hover:bg-[#2A4D3E]'
+      <button 
+        onClick={onBook}
+        className={`w-full py-4 rounded-full font-semibold transition-all ${highlight ? 'bg-[#FDFDF5] text-[#1E3A2F] hover:bg-white' : 'bg-[#1E3A2F] text-white hover:bg-[#2A4D3E]'
         }`}>
         Book Now
       </button>

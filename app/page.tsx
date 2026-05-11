@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ServiceCard } from "./components/ServiceCard";
 import Antigravity from "./components/Antigravity";
 import GlareHover from "./components/GlareHover";
@@ -6,6 +7,7 @@ import { HeroText } from "./components/HeroText";
 import DragElements from "./components/DragElements";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { BookingForm } from "./components/BookingForm";
+import { ArrowRight } from "lucide-react";
 
 const testimonials = [
   {
@@ -94,7 +96,7 @@ export default function Home() {
                 <h2 className="font-(--font-display) text-2xl tracking-tight">
                   Our Services
                 </h2>
-                <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-muted">
+                <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-[#1E3A2F]">
                   From signature styling to restorative treatments, we offer a curated range designed to
                   elevate your natural beauty.
                 </p>
@@ -121,6 +123,19 @@ export default function Home() {
                   body="A unique, relaxing treatment focused on scalp health and total rejuvenation, blending traditional techniques with absolute luxury."
                   img="/compressed/14.jpg"
                 />
+              </div>
+
+              <div className="mt-8 flex justify-end relative z-20">
+                <Link
+                  href="/services"
+                  className="group flex items-center gap-3 text-[10px] font-bold tracking-[0.4em] uppercase text-[#1E3A2F] hover:text-[#819671] transition-all duration-500"
+                >
+                  <span className="relative">
+                    View More
+                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#819671] group-hover:w-full transition-all duration-500" />
+                  </span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-500" />
+                </Link>
               </div>
             </div>
           </section>
@@ -197,78 +212,93 @@ export default function Home() {
           </section>
         </div>
 
-        <section className="relative h-[800px] w-full overflow-hidden bg-brand/5 pt-20 pb-40 flex flex-col">
+        <section className="relative h-[850px] w-full overflow-hidden bg-brand/5 pt-20 pb-40 flex flex-col">
           <div className="site-container relative flex-1">
-            <div className="mb-8 text-center">
-              <h2 className="font-(--font-display) text-2xl tracking-tight">
-                Moments of Beauty
-              </h2>
-              <p className="mx-auto mt-2 max-w-2xl text-sm text-muted">
-                Explore our craft through these captured moments. Feel free to move them around.
+            {/* Background Narrative Text */}
+            <div className="absolute top-[35%] right-0 w-[30%] z-0 pointer-events-none opacity-40 select-none">
+              <div className="h-px w-12 bg-[#819671] mb-6" />
+              <p className="text-2xl text-[#1E3A2F] leading-tight font-(--font-display) italic mb-8">
+                &quot;A place designed for those who appreciate elegance, self care, and timeless beauty.&quot;
+              </p>
+              <p className="text-base text-[#4A5D45] leading-relaxed font-light">
+                Whether you’re here for a simple refresh or a full transformation, every visit is filled with warmth, creativity, and personalized care made just for you.
               </p>
             </div>
 
-            <DragElements className="h-full w-full">
-              {/* Image 1 */}
-              <div className="w-48 bg-white p-3 shadow-xl -rotate-6 transition-transform hover:rotate-0" style={{ marginTop: '40px', marginLeft: '10%' }}>
+            <div className="mb-12 text-center relative z-20">
+              <h2 className="font-(--font-display) text-3xl tracking-tight text-[#1E3A2F]">
+                Moments of <span className="italic text-[#819671]">Beauty</span>
+              </h2>
+              <p className="mx-auto mt-2 max-w-2xl text-xs uppercase tracking-widest text-[#819671] font-bold">
+                Explore our craft • Feel free to interact
+              </p>
+            </div>
+
+            <DragElements className="flex-1 w-full relative z-10">
+              {/* Separate Scattered Grid - Wide Distribution */}
+              
+              {/* Row 1 */}
+              <div className="w-44 bg-white p-3 shadow-xl -rotate-6 absolute" style={{ top: '8%', left: '5%' }}>
                 <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm">
-                  <Image src="/compressed/liyagole.JPG" alt="Salon Craft 1" fill className="object-cover pointer-events-none" draggable={false} />
+                  <Image src="/compressed/liyagole.JPG" alt="Salon 1" fill className="object-cover pointer-events-none" draggable={false} />
                 </div>
                 <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-[#819671] font-bold">Style & Grace</p>
               </div>
 
-              {/* Image 2 */}
-              <div className="w-56 bg-white p-3 shadow-xl rotate-3 transition-transform hover:rotate-0" style={{ marginTop: '150px', marginLeft: '35%' }}>
+              <div className="w-52 bg-white p-3 shadow-xl rotate-3 absolute" style={{ top: '5%', left: '38%' }}>
                 <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm">
-                  <Image src="/compressed/8.webp" alt="Salon Craft 2" fill className="object-cover pointer-events-none" draggable={false} />
+                  <Image src="/compressed/8.webp" alt="Salon 2" fill className="object-cover pointer-events-none" draggable={false} />
                 </div>
                 <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-[#819671] font-bold">Precision Cut</p>
               </div>
 
-              {/* Image 3 */}
-              <div className="w-52 bg-white p-3 shadow-xl -rotate-2 transition-transform hover:rotate-0" style={{ marginTop: '40px', marginLeft: '65%' }}>
+              <div className="w-48 bg-white p-3 shadow-xl -rotate-2 absolute" style={{ top: '10%', left: '72%' }}>
                 <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm">
-                  <Image src="/compressed/3.webp" alt="Salon Craft 3" fill className="object-cover pointer-events-none" draggable={false} />
+                  <Image src="/compressed/3.webp" alt="Salon 3" fill className="object-cover pointer-events-none" draggable={false} />
                 </div>
                 <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-[#819671] font-bold">Radiant Color</p>
               </div>
 
-              {/* Image 4 */}
-              <div className="w-60 bg-white p-3 shadow-xl rotate-6 transition-transform hover:rotate-0" style={{ marginTop: '240px', marginLeft: '15%' }}>
+              {/* Row 2 */}
+              <div className="w-50 bg-white p-3 shadow-xl rotate-6 absolute" style={{ top: '38%', left: '12%' }}>
                 <div className="relative aspect-square w-full overflow-hidden rounded-sm">
-                  <Image src="/compressed/14.jpg" alt="Salon Craft 4" fill className="object-cover pointer-events-none" draggable={false} />
+                  <Image src="/compressed/14.jpg" alt="Salon 4" fill className="object-cover pointer-events-none" draggable={false} />
                 </div>
                 <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-[#819671] font-bold">The Experience</p>
               </div>
 
-              {/* Image 5 */}
-              <div className="w-44 bg-white p-3 shadow-xl -rotate-12 transition-transform hover:rotate-0" style={{ marginTop: '280px', marginLeft: '70%' }}>
+              <div className="w-48 bg-white p-3 shadow-2xl skew-y-1 absolute" style={{ top: '42%', left: '46%' }}>
                 <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm">
-                  <Image src="/compressed/2.webp" alt="Salon Craft 5" fill className="object-cover pointer-events-none" draggable={false} />
+                  <Image src="/compressed/2.webp" alt="Salon 5" fill className="object-cover pointer-events-none" draggable={false} />
                 </div>
-                <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-[#819671] font-bold">Artistry</p>
+                <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-[#819671] font-bold">Refined Edge</p>
               </div>
 
-              {/* Image 6 */}
-              <div className="w-50 bg-white p-3 shadow-xl rotate-2 transition-transform hover:rotate-0" style={{ marginTop: '100px', marginLeft: '80%' }}>
-                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm">
-                  <Image src="/compressed/11.webp" alt="Salon Craft 6" fill className="object-cover pointer-events-none" draggable={false} />
+              <div className="w-44 bg-white p-3 shadow-xl -rotate-12 absolute" style={{ top: '35%', left: '82%' }}>
+                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm">
+                  <Image src="/compressed/11.webp" alt="Salon 6" fill className="object-cover pointer-events-none" draggable={false} />
                 </div>
                 <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-[#819671] font-bold">Perfect Mani</p>
               </div>
 
-              {/* Image 7 */}
-              <div className="w-40 bg-white p-3 shadow-xl -rotate-3 transition-transform hover:rotate-0" style={{ marginTop: '350px', marginLeft: '45%' }}>
+              {/* Row 3 */}
+              <div className="w-46 bg-white p-3 shadow-xl rotate-4 absolute" style={{ top: '72%', left: '8%' }}>
+                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm">
+                  <Image src="/compressed/12.webp" alt="Salon 7" fill className="object-cover pointer-events-none" draggable={false} />
+                </div>
+                <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-[#819671] font-bold">Signature Look</p>
+              </div>
+
+              <div className="w-48 bg-white p-3 shadow-xl -rotate-2 absolute" style={{ top: '68%', left: '40%' }}>
                 <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm">
-                  <Image src="/compressed/13.jpg" alt="Salon Craft 7" fill className="object-cover pointer-events-none" draggable={false} />
+                  <Image src="/compressed/13.jpg" alt="Salon 8" fill className="object-cover pointer-events-none" draggable={false} />
                 </div>
                 <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-[#819671] font-bold">Vibrant Hue</p>
               </div>
 
-              {/* Image 8 */}
-              <div className="w-48 bg-white p-3 shadow-xl rotate-12 transition-transform hover:rotate-0" style={{ marginTop: '20px', marginLeft: '40%' }}>
+              <div className="w-52 bg-white p-3 shadow-xl rotate-12 absolute" style={{ top: '65%', left: '75%' }}>
                 <div className="relative aspect-square w-full overflow-hidden rounded-sm">
-                  <Image src="/compressed/4.webp" alt="Salon Craft 8" fill className="object-cover pointer-events-none" draggable={false} />
+                  <Image src="/compressed/4.webp" alt="Salon 9" fill className="object-cover pointer-events-none" draggable={false} />
                 </div>
                 <p className="mt-3 text-[10px] uppercase tracking-widest text-center text-[#819671] font-bold">Modern Flow</p>
               </div>

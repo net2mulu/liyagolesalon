@@ -1,5 +1,29 @@
+"use client";
+
 import Image from "next/image";
 import { BookingForm } from "@/app/components/BookingForm";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
+
+function BookingContent() {
+   const searchParams = useSearchParams();
+   const service = searchParams.get("service") || "";
+
+   return (
+      <div className="site-container relative z-10">
+         <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2 mb-6 px-4 py-1 rounded-full bg-white/20 text-[#1E3A2F]/80 backdrop-blur-md">
+               <span className="text-[10px] font-bold uppercase tracking-widest leading-none">Your Next Look Starts Here</span>
+            </div>
+            <h2 className="text-5xl md:text-7xl font-(--font-display) text-[#819671] mb-8 tracking-tighter italic">Effortless Excellence.</h2>
+            <p className="max-w-2xl mx-auto text-lg md:text-xl text-[#4A5D45]/70 font-light">
+               Select your preferred service and platform below. We&apos;ll handle the rest.
+            </p>
+         </div>
+         <BookingForm initialService={service} />
+      </div>
+   );
+}
 
 export default function ContactPage() {
    return (
@@ -12,18 +36,9 @@ export default function ContactPage() {
                   <span className="text-[20vw] font-bold text-black whitespace-nowrap">BOOK NOW BOOK NOW</span>
                </div>
 
-               <div className="site-container relative z-10">
-                  <div className="text-center mb-20">
-                     <div className="inline-flex items-center gap-2 mb-6 px-4 py-1 rounded-full bg-white/20 text-[#1E3A2F]/80 backdrop-blur-md">
-                        <span className="text-[10px] font-bold uppercase tracking-widest leading-none">Your Next Look Starts Here</span>
-                     </div>
-                     <h2 className="text-5xl md:text-7xl font-(--font-display) text-[#819671] mb-8 tracking-tighter italic">Effortless Excellence.</h2>
-                     <p className="max-w-2xl mx-auto text-lg md:text-xl text-[#4A5D45]/70 font-light">
-                        Select your preferred service and platform below. We&apos;ll handle the rest.
-                     </p>
-                  </div>
-                  <BookingForm />
-               </div>
+               <Suspense fallback={<div className="site-container py-20 text-center">Loading...</div>}>
+                  <BookingContent />
+               </Suspense>
             </section>
 
             {/* Contact Hero: Editorial Split */}
@@ -36,12 +51,12 @@ export default function ContactPage() {
                            <div className="h-px w-10 bg-[#819671]/40" />
                            <span className="text-[10px] font-bold uppercase tracking-[0.6em] text-[#819671]">Studio Concierge</span>
                         </div>
-                        
+
                         <h1 className="font-(--font-display) text-6xl md:text-[9vw] leading-[0.8] text-[#1E3A2F] tracking-tighter mb-10">
                            Beauty <br />
                            <span className="italic text-[#819671]">Coordinate.</span>
                         </h1>
-                        
+
                         <div className="max-w-md border-l-2 border-[#819671]/10 pl-10 py-2">
                            <p className="text-lg md:text-xl text-[#4A5D45]/60 leading-relaxed font-light mb-8">
                               Our consultants are ready to tailor your luxury journey. Reach out to secure your moment of transformation.
@@ -55,14 +70,14 @@ export default function ContactPage() {
 
                      {/* Right: The Portrait */}
                      <div className="relative aspect-[4/5] md:aspect-[3/4] rounded-[80px] lg:rounded-[120px] overflow-hidden shadow-2xl group">
-                        <Image 
-                           src="/compressed/liyagole.JPG" 
-                           alt="Liya Gole Salon Ambience" 
-                           fill 
-                           className="object-cover transition-transform duration-[3s] group-hover:scale-110" 
+                        <Image
+                           src="/compressed/liyagole.JPG"
+                           alt="Liya Gole Salon Ambience"
+                           fill
+                           className="object-cover transition-transform duration-[3s] group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#1E3A2F]/20 via-transparent to-transparent" />
-                        
+
                         {/* Interactive floating label */}
                         <div className="absolute bottom-10 left-10 right-10 p-8 bg-white/10 backdrop-blur-md rounded-[40px] border border-white/20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700">
                            <p className="text-white text-xs font-bold uppercase tracking-widest text-center">Visit our Sanctuary</p>
@@ -87,9 +102,9 @@ export default function ContactPage() {
                            <p className="text-[#4A5D45]/60 text-lg font-light leading-relaxed mb-12">
                               Everything you need to know about your luxury salon experience at Liya Gole.
                            </p>
-                           <button className="px-8 py-3 bg-[#1E3A2F] text-white rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#819671] transition-all">
+                           {/* <button className="px-8 py-3 bg-[#1E3A2F] text-white rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#819671] transition-all">
                               Download Price List
-                           </button>
+                           </button> */}
                         </div>
                      </div>
                      <div className="lg:col-span-8 space-y-4">

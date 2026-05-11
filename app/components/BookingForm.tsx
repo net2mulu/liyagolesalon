@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { User, Mail, Phone, Sparkles, Calendar, Clock, Scissors, Send } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -31,16 +31,22 @@ const SERVICES = [
   "Professional Makeup Services"
 ];
 
-export function BookingForm() {
+export function BookingForm({ initialService }: { initialService?: string }) {
   const [state, setState] = useState<FormState>({
     firstName: "",
     lastName: "",
     email: "",
-    serviceType: "",
+    serviceType: initialService || "",
     date: "",
     time: "",
     platform: "WhatsApp",
   });
+
+  useEffect(() => {
+    if (initialService) {
+      setState(prev => ({ ...prev, serviceType: initialService }));
+    }
+  }, [initialService]);
 
   const messageBody = useMemo(() => {
     return [
